@@ -7,6 +7,7 @@ package com.essar.screens;
 
 import com.essar.dao.SalesDAO;
 import com.essar.dao.StockDAO;
+import com.essar.dao.VpStockDAO;
 import com.essar.pojos.Sales;
 import com.essar.utils.TableMouseListener;
 import com.essar.pojos.Stock;
@@ -410,7 +411,7 @@ public class Vp_ViewStockAlerts extends javax.swing.JFrame implements ActionList
     public void syncDataFromViewToTable(){
         //System.out.println("--------INSIDE DELETE-"+tblCategory.getModel().getValueAt(tblCategory.getSelectedRow(),0));
         Stock stock = null;
-        StockDAO stockDAO = new StockDAO();
+        VpStockDAO stockDAO = new VpStockDAO();
         itemId = Integer.parseInt(tblStockAlertView.getModel().getValueAt(tblStockAlertView.getSelectedRow(),tblStockAlertView.getColumnCount()-1).toString());
         //SalesDAO salesDAO = new SalesDAO();
         System.out.println("Id---"+itemId);

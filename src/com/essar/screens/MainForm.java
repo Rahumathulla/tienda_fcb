@@ -774,9 +774,9 @@ public class MainForm extends javax.swing.JFrame {
 
     private void cmdSalesVpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdSalesVpActionPerformed
         // TODO add your handling code here:
-        /*Vp_SalesWindow salesWindow = new Vp_SalesWindow();
+        Vp_SalesWindow salesWindow = new Vp_SalesWindow();
         salesWindow.setBounds(40, 40, 980, 680);
-        salesWindow.setVisible(true);*/
+        salesWindow.setVisible(true);
     }//GEN-LAST:event_cmdSalesVpActionPerformed
 
     private void cmdPurchaseVpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdPurchaseVpActionPerformed
