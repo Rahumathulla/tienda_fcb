@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="0bf189e0-b1cf-485f-8592-c214ae2e7410">
+	<property name="ireport.zoom" value="1.2100000000000002"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     stock.`hsn_code` AS stock_hsn_code,
+     stock.`item_name` AS stock_item_name,
+     stock.`category` AS stock_category,
+     stock.`supplier` AS stock_supplier,
+     stock.`gst_percentage` AS stock_gst_percentage,
+     stock.`quantity` AS stock_quantity,
+     stock.`reorder_quantity` AS stock_reorder_quantity
+FROM
+     `stock` stock]]>
+	</queryString>
+	<field name="stock_hsn_code" class="java.lang.String"/>
+	<field name="stock_item_name" class="java.lang.String"/>
+	<field name="stock_category" class="java.lang.String"/>
+	<field name="stock_supplier" class="java.lang.String"/>
+	<field name="stock_gst_percentage" class="java.lang.String"/>
+	<field name="stock_quantity" class="java.lang.String"/>
+	<field name="stock_reorder_quantity" class="java.lang.String"/>
+	<background>
+		<band/>
+	</background>
+	<title>
+		<band height="72">
+			<frame>
+				<reportElement mode="Opaque" x="-20" y="0" width="573" height="72" backcolor="#006699" uuid="ee26412b-d765-413b-92a1-15c728cbdcf6"/>
+				<staticText>
+					<reportElement x="20" y="20" width="234" height="32" forecolor="#FFFFFF" uuid="25fa4fa5-9282-43c0-9af6-4e2d8473d587"/>
+					<textElement>
+						<font size="18" isBold="true"/>
+					</textElement>
+					<text><![CDATA[AK TRADERS]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="302" y="43" width="231" height="20" forecolor="#FFFFFF" uuid="341e80b5-18c3-4b6f-aa2b-b34f7454267e"/>
+					<textElement textAlignment="Right">
+						<font size="12" isBold="false"/>
+					</textElement>
+					<text><![CDATA[The electrical & plumbing materials shop]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="20" y="52" width="132" height="20" forecolor="#FFFFFF" uuid="eac637f8-5e09-4d4a-9ca2-a3aa5eec57dc"/>
+					<textElement>
+						<font size="10" isBold="false"/>
+					</textElement>
+					<text><![CDATA[Thalavila, PC Mukku PO]]></text>
+				</staticText>
+			</frame>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="14"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="17">
+			<staticText>
+				<reportElement mode="Opaque" x="2" y="0" width="63" height="17" forecolor="#006699" backcolor="#E6E6E6" uuid="492dbf38-e69e-4af5-b497-adecf5028c74"/>
+				<textElement>
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[HSN Code]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="63" y="0" width="187" height="17" forecolor="#006699" backcolor="#E6E6E6" uuid="7703f4a5-755c-47ef-a9ce-3540eb464ce5"/>
+				<textElement>
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Item Name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="250" y="0" width="62" height="17" forecolor="#006699" backcolor="#E6E6E6" uuid="85489090-84d3-4977-8bd5-6cfd4242cf87"/>
+				<textElement>
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Category]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="312" y="0" width="83" height="17" forecolor="#006699" backcolor="#E6E6E6" uuid="894f3063-1e4c-4119-9ebe-56001056fdc6"/>
+				<textElement>
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Supplier Name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="395" y="0" width="39" height="17" forecolor="#006699" backcolor="#E6E6E6" uuid="e323b2d6-156a-4fb2-ab1d-62ec5f7fb66b"/>
+				<textElement textAlignment="Right">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[GST%]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="434" y="0" width="51" height="17" forecolor="#006699" backcolor="#E6E6E6" uuid="d62503b7-1025-4cdf-835e-5c01630fe5fb"/>
+				<textElement textAlignment="Right">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Quantity]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="485" y="0" width="68" height="17" forecolor="#006699" backcolor="#E6E6E6" uuid="a624d14d-0b62-4e73-a158-c033eb68591f"/>
+				<textElement textAlignment="Center">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Re-order Qty]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="13">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="2" y="0" width="63" height="13" uuid="aebbb27d-b889-4428-bb69-7bf2f247c6cb"/>
+				<textElement>
+					<font fontName="Arial Narrow" size="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{stock_hsn_code}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="63" y="0" width="187" height="13" uuid="8c7d144f-3c5f-4908-b5aa-cc8d20539de6"/>
+				<textElement>
+					<font fontName="Arial Narrow" size="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{stock_item_name}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="250" y="0" width="63" height="13" uuid="c96145b2-f296-4f9f-9b8b-4ef1bcf7652a"/>
+				<textElement>
+					<font fontName="Arial Narrow" size="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{stock_category}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="313" y="0" width="42" height="13" uuid="8ed67216-0123-4319-8f1c-1bafde92a72b"/>
+				<textElement textAlignment="Right">
+					<font fontName="Arial Narrow" size="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{stock_supplier}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="385" y="0" width="39" height="13" uuid="971d80c3-c174-4349-be4c-433f12443420"/>
+				<textElement textAlignment="Right">
+					<font fontName="Arial Narrow" size="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{stock_gst_percentage}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="448" y="0" width="24" height="13" uuid="c1a2f5f1-7e36-4c06-801e-93ca1ebd41ba"/>
+				<textElement textAlignment="Right">
+					<font fontName="Arial Narrow" size="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{stock_quantity}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="505" y="0" width="24" height="13" uuid="57339f06-c513-4535-85d1-0d2bb803798a"/>
+				<textElement textAlignment="Right">
+					<font fontName="Arial Narrow" size="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{stock_reorder_quantity}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band/>
+	</columnFooter>
+	<pageFooter>
+		<band height="18">
+			<textField>
+				<reportElement mode="Opaque" x="0" y="4" width="515" height="13" backcolor="#E6E6E6" uuid="e5be7866-e1d1-4f14-8709-a8806691dd62"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement mode="Opaque" x="515" y="4" width="40" height="13" backcolor="#E6E6E6" uuid="82399762-30e8-4aea-8db5-4c49c3346bf4"/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="0" y="4" width="100" height="13" uuid="e5035a51-5bab-487b-944c-18b9fb8438d8"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band/>
+	</summary>
+</jasperReport>

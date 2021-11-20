@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/D:/Projects/Tienda/FCB/tienda/src/com/essar/reports/stock_report_first_choice_vp.jrxml</file>
+            <file>file:/D:/Projects/Tienda/FCB/tienda/src/com/essar/screens/MainForm.java</file>
+            <file>file:/D:/Projects/Tienda/FCB/tienda/src/com/essar/dao/VpStockDAO.java</file>
+            <file>file:/D:/Projects/Tienda/FCB/tienda/src/com/essar/utils/PropertyUtil.java</file>
+            <file>file:/D:/Projects/Tienda/FCB/tienda/src/com/essar/screens/Vp_StockAudit.java</file>
+            <file>file:/D:/Projects/Tienda/FCB/tienda/src/com/essar/screens/Vp_ViewStockAlerts.java</file>
+            <file>file:/D:/Projects/Tienda/FCB/tienda/src/com/essar/screens/Vp_StockFind.java</file>
+            <file>file:/D:/Projects/Tienda/FCB/tienda/src/com/essar/screens/Vp_StockEntry.java</file>
+        </group>
+    </open-files>
+</project-private>

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<subDataset name="dataset1"/>
+	<subDataset name="dataset2"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     count(stock.`item_id`) AS stock_item_id,
+     stock.`hsn_code` AS stock_hsn_code,
+     stock.`item_name` AS stock_item_name,
+     stock.`category` AS stock_category,
+     stock.`supplier` AS stock_supplier,
+     stock.`description` AS stock_description,
+     stock.`purchase_price` AS stock_purchase_price,
+     stock.`gst_percentage` AS stock_gst_percentage,
+     stock.`gst_amount` AS stock_gst_amount,
+     stock.`margin` AS stock_margin,
+     stock.`discount` AS stock_discount,
+     stock.`selling_price` AS stock_selling_price,
+     stock.`quantity` AS stock_quantity,
+     stock.`reorder_quantity` AS stock_reorder_quantity
+FROM
+     `stock` stock group by stock.`supplier`]]>
+	</queryString>
+	<field name="stock_item_id" class="java.lang.Long"/>
+	<field name="stock_supplier" class="java.lang.String"/>
+	<group name="stock_supplier">
+		<groupExpression><![CDATA[$F{stock_supplier}]]></groupExpression>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<detail>
+		<band height="275" splitType="Stretch">
+			<barChart>
+				<chart>
+					<reportElement x="93" y="31" width="532" height="197"/>
+					<chartTitle/>
+					<chartSubtitle/>
+					<chartLegend/>
+				</chart>
+				<categoryDataset>
+					<dataset>
+						<datasetRun subDataset="dataset1"/>
+					</dataset>
+				</categoryDataset>
+				<barPlot>
+					<plot/>
+					<itemLabel/>
+					<categoryAxisFormat>
+						<axisFormat/>
+					</categoryAxisFormat>
+					<valueAxisFormat>
+						<axisFormat/>
+					</valueAxisFormat>
+				</barPlot>
+			</barChart>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
