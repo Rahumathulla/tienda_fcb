@@ -7,8 +7,6 @@ package com.essar.screens;
 
 import com.essar.dao.CustomerDAO;
 import com.essar.dao.PricingTierDAO;
-import com.essar.dao.SalesDAO;
-import com.essar.dao.StockDAO;
 import com.essar.dao.VpSalesDAO;
 import com.essar.dao.VpStockDAO;
 import com.essar.pojos.Customer;
@@ -254,7 +252,7 @@ public class Vp_SalesWindow extends javax.swing.JFrame implements ActionListener
         mitEdit.setText("jMenuItem1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setTitle("Sales");
+        setTitle("[Sales]");
         setName("frmProductCategory"); // NOI18N
 
         lblItemName.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
@@ -1143,7 +1141,7 @@ public class Vp_SalesWindow extends javax.swing.JFrame implements ActionListener
         try{            
             if(currentId+1 <= maxId){
                 currentId = currentId +1;
-                SalesDAO salesDAO = new SalesDAO();
+                VpSalesDAO salesDAO = new VpSalesDAO();
                 fetchSalesDataIntoTable(salesDAO.retrieveBySalesId(currentId));
             }else{
                 JOptionPane.showMessageDialog(null, "No more record after.");
@@ -1159,7 +1157,7 @@ public class Vp_SalesWindow extends javax.swing.JFrame implements ActionListener
             
             if(currentId-1 >= minId){
                 currentId = currentId -1;
-                SalesDAO salesDAO = new SalesDAO();
+                VpSalesDAO salesDAO = new VpSalesDAO();
                 fetchSalesDataIntoTable(salesDAO.retrieveBySalesId(currentId));
             }else{
                 JOptionPane.showMessageDialog(null, "No more record before.");
@@ -1254,7 +1252,7 @@ public class Vp_SalesWindow extends javax.swing.JFrame implements ActionListener
             //jv.setTitle("Sales Bill");
             con.close();
         } catch (JRException ex) {
-            Logger.getLogger(StockEntry.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Vp_StockEntry.class.getName()).log(Level.SEVERE, null, ex);
         } catch (SQLException ex) {
             Logger.getLogger(Vp_SalesWindow.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -1444,7 +1442,8 @@ public class Vp_SalesWindow extends javax.swing.JFrame implements ActionListener
 
     private void txtItemNameKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtItemNameKeyReleased
         // TODO add your handling code here:
-        if(evt.getKeyCode()== KeyEvent.VK_ENTER){
+        if(evt.getKeyCode()== KeyEvent.VK_ENTER && null != txtItemName.getText()
+                && !("".equalsIgnoreCase(txtItemName.getText()))){
             populateItemDetails();
         }
     }//GEN-LAST:event_txtItemNameKeyReleased
@@ -1455,12 +1454,12 @@ public class Vp_SalesWindow extends javax.swing.JFrame implements ActionListener
 
     private void txtItemNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtItemNameActionPerformed
         // TODO add your handling code here:
-        populateItemDetails();
+        //populateItemDetails();
     }//GEN-LAST:event_txtItemNameActionPerformed
 
     private void txtItemNameMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtItemNameMouseClicked
        /* if(evt.getClickCount()==2){
-            populateItemDetails();
+            //populateItemDetails();
         }*/
     }//GEN-LAST:event_txtItemNameMouseClicked
 
@@ -1649,7 +1648,7 @@ public class Vp_SalesWindow extends javax.swing.JFrame implements ActionListener
         itemNameColumn.setMinWidth(400);
         itemNameColumn.setMaxWidth(400);
         
-        SalesDAO navigationDAO =  new SalesDAO();
+        VpSalesDAO navigationDAO =  new VpSalesDAO();
         List<Long> idMaxMin = navigationDAO.getMaxAndMinIds();
         minId = idMaxMin.get(0);
         maxId = idMaxMin.get(1);
@@ -1752,7 +1751,7 @@ public class Vp_SalesWindow extends javax.swing.JFrame implements ActionListener
         
     public void saveSalesForm(){
 
-        SalesDAO billGenDAO =  new SalesDAO();
+        VpSalesDAO billGenDAO =  new VpSalesDAO();
         Sales sales = new Sales();
         sales.setBillNumber(txtBillNumber.getText());
         sales.setSalesDate(dtpSalesDate.getDate());
@@ -1814,7 +1813,7 @@ public class Vp_SalesWindow extends javax.swing.JFrame implements ActionListener
             salesDetailsList.add(salesDetails);
         }         
         sales.setSalesDetails(salesDetailsList);
-        SalesDAO salesDAO =  new SalesDAO();
+        VpSalesDAO salesDAO =  new VpSalesDAO();
         for(int i=0; i<map.size();i++){
             System.out.println("--key :: "+map.keySet());
             System.out.println("--value :: "+map.values());
@@ -1894,7 +1893,7 @@ public class Vp_SalesWindow extends javax.swing.JFrame implements ActionListener
             }
         }       
         sales.setSalesDetails(moreItemsList); 
-        SalesDAO salesDAO =  new SalesDAO();
+        VpSalesDAO salesDAO =  new VpSalesDAO();
         for(int i=0; i<map.size();i++){
             System.out.println("--key :: "+map.keySet());
             System.out.println("--value :: "+map.values());
@@ -2212,6 +2211,7 @@ public class Vp_SalesWindow extends javax.swing.JFrame implements ActionListener
 
                 if(!txtItemName.getText().equalsIgnoreCase(""))
                 stockDAO = new VpStockDAO();
+                System.out.println("test :: "+txtItemName.getText().trim());
                 stock = stockDAO.retrieveByName(txtItemName.getText().trim());
                 txtHSNCode.setText(stock.getHsnCode());
                 txtUnitPrice.setText(stock.getPurchasePrice()+"");
@@ -2248,7 +2248,7 @@ public class Vp_SalesWindow extends javax.swing.JFrame implements ActionListener
                 //txtQuantity.requestFocus();
 
                 //System.out.println("outside cust type loop");
-                for(int i=0;i<cmbCustomerType.getItemCount();i++){
+                /*for(int i=0;i<cmbCustomerType.getItemCount();i++){
                     System.out.println("inside cust--> type loop"+tempPrice);
                     PricingTier pricingTier = (PricingTier) cmbCustomerType.getItemAt(i);
                     if(pricingTier.getCustomerTypeName().equalsIgnoreCase("plumber")){
@@ -2258,7 +2258,9 @@ public class Vp_SalesWindow extends javax.swing.JFrame implements ActionListener
                     }else if(pricingTier.getCustomerTypeName().equalsIgnoreCase("normal")){
                         lblCustomerPrice.setText(df.format(tempPrice*pricingTier.getPricingPercentage()*0.01));
                     }
-                }
+                }*/
+                PricingTier pricingTier = (PricingTier) cmbCustomerType.getSelectedItem();
+                lblCustomerPrice.setText(df.format(tempPrice*pricingTier.getPricingPercentage()*0.01));
                 System.out.println("--------"+dUnitPostGstPrice);
                 System.out.println("Landing Price--");
                 lblLandingPrice.setText(df.format(dUnitPostGstPrice));
@@ -2266,6 +2268,7 @@ public class Vp_SalesWindow extends javax.swing.JFrame implements ActionListener
             
             catch(Exception e){
                 System.out.println("Error Retrieving the item -"+e.getMessage());
+                e.printStackTrace();
             }            
             
     }

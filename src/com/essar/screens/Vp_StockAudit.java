@@ -82,7 +82,7 @@ public class Vp_StockAudit extends javax.swing.JFrame implements ActionListener{
         lblPossibleReasons = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setTitle("Stock Audit");
+        setTitle("[Stock Audit]");
 
         pnlStockEntry.setBorder(javax.swing.BorderFactory.createTitledBorder("Item Details"));
 

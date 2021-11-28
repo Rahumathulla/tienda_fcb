@@ -304,7 +304,7 @@ public class VpSalesDAO {
                 sales.setShippingAddress(rs.getString(31));
                 //sales.setCreateTS(rs.getDate(13)); 
                 //sales.setUpdateTS(rs.getDate(14));
-             String detailSql = "SELECT * from sales_details where sales_id ="+sales.getSalesId();  
+             String detailSql = "SELECT * from sales_details_vp where sales_id ="+sales.getSalesId();  
              Statement detailStatement = con.createStatement();
              ResultSet rsDetails = detailStatement.executeQuery(detailSql);
              while(rsDetails.next()){
@@ -674,36 +674,4 @@ public class VpSalesDAO {
         }
     }
     
-    public void deleteRecordByCode(String code) {
-        try {            
-            String sql = "DELETE FROM supplier WHERE supplier_code = ? ";
-            PreparedStatement ps = con.prepareStatement(sql);
-            ps.setString(1, code);
-            ps.executeUpdate();
-            con.close();
-            
-        } catch (SQLException ex) {
-            Logger.getLogger(ProductCategory.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }
-
-    public void updateRecord(Supplier supplier) {
-        try {            
-            String sql = "UPDATE supplier set supplier_code=?, supplier_name=?"
-                    + ", supplier_contact_number=?"
-                    + ", supplier_rating=?, supplier_address=?  WHERE supplier_id=?";
-            PreparedStatement ps = con.prepareStatement(sql);
-            System.out.println("--::"+sql);
-            ps.setString(1, supplier.getSupplierCode());
-            ps.setString(2, supplier.getSupplierName());
-            ps.setString(3, supplier.getSupplierContactNumber());
-            ps.setString(4, supplier.getSupplierRating());
-            ps.setString(5, supplier.getSupplierAddress());
-            ps.setLong(6, supplier.getSupplierId());
-            ps.executeUpdate();
-            con.close();            
-        } catch (SQLException ex) {
-            Logger.getLogger(ProductCategory.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }    
 }

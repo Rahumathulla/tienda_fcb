@@ -781,6 +781,9 @@ public class MainForm extends javax.swing.JFrame {
 
     private void cmdPurchaseVpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdPurchaseVpActionPerformed
         // TODO add your handling code here:
+        Vp_PurchaseWindow purchaseWindow = new Vp_PurchaseWindow();
+        purchaseWindow.setBounds(40, 40, 960, 680);
+        purchaseWindow.setVisible(true);
     }//GEN-LAST:event_cmdPurchaseVpActionPerformed
 
     private void cmdStockVpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdStockVpActionPerformed
@@ -792,6 +795,10 @@ public class MainForm extends javax.swing.JFrame {
 
     private void cmdReportsVpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdReportsVpActionPerformed
         // TODO add your handling code here:
+        Vp_ViewReports viewReports =  new Vp_ViewReports();
+        viewReports.setBounds(60, 60, 580, 320);
+        viewReports.setVisible(true);
+        
     }//GEN-LAST:event_cmdReportsVpActionPerformed
 
     /**

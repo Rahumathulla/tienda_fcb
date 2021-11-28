@@ -102,6 +102,7 @@ public class VpStockDAO {
         Stock stock = null;
         try {
             String sql = "SELECT * from stock_vp where item_name = '"+name+"'";
+            System.out.println("Query--"+sql);
             ConnectionManager cm = new ConnectionManager();
             Connection con = cm.getConnection();
             ResultSet rs = null;

@@ -55,7 +55,7 @@ public class Vp_StockFind extends javax.swing.JFrame implements ActionListener{
         btnSearch = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setTitle("Stock Search");
+        setTitle("[Stock Search]");
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel1.setText("HSN Code");
@@ -180,7 +180,7 @@ public class Vp_StockFind extends javax.swing.JFrame implements ActionListener{
         }
         System.out.println("Query :"+QueryStrings.stockQuery);
         this.dispose();
-        ViewStockAlerts stockAlerts = new ViewStockAlerts();
+        Vp_ViewStockAlerts stockAlerts = new Vp_ViewStockAlerts();
         //stockAlerts.setBounds(40, 40, 940, 500);
         stockAlerts.setVisible(true);
     }//GEN-LAST:event_btnSearchActionPerformed

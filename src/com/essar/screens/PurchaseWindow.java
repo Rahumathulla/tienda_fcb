@@ -540,6 +540,11 @@ public class PurchaseWindow extends javax.swing.JFrame implements ActionListener
         btnAddMore.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/plus.png"))); // NOI18N
         btnAddMore.setMnemonic('S');
         btnAddMore.setText("More");
+        btnAddMore.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAddMoreActionPerformed(evt);
+            }
+        });
 
         btnReset.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         btnReset.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/reset.png"))); // NOI18N
@@ -1089,6 +1094,10 @@ public class PurchaseWindow extends javax.swing.JFrame implements ActionListener
         // TODO add your handling code here:
         
     }//GEN-LAST:event_tblPurchaseDetailsMouseClicked
+
+    private void btnAddMoreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddMoreActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnAddMoreActionPerformed
 
     /**
      * @param args the command line arguments

@@ -5,8 +5,7 @@
  */
 package com.essar.screens;
 
-import com.essar.dao.SalesDAO;
-import com.essar.dao.StockDAO;
+import com.essar.dao.VpSalesDAO;
 import com.essar.dao.VpStockDAO;
 import com.essar.pojos.Sales;
 import com.essar.utils.TableMouseListener;
@@ -106,7 +105,7 @@ public class Vp_ViewStockAlerts extends javax.swing.JFrame implements ActionList
         mitView.setText("jMenuItem1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setTitle("Stock Report");
+        setTitle("[Stock Report]");
         setName("frmProductCategory"); // NOI18N
 
         panStockAlertView.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -218,10 +217,10 @@ public class Vp_ViewStockAlerts extends javax.swing.JFrame implements ActionList
         if (evt.getClickCount() == 2 && !evt.isConsumed()) {
                                 Sales sales = null;
                 itemId = Integer.parseInt(tblStockAlertView.getModel().getValueAt(tblStockAlertView.getSelectedRow(),10).toString());
-                SalesDAO salesDAO = new SalesDAO();
+                VpSalesDAO salesDAO = new VpSalesDAO();
                 sales = salesDAO.retrieveByBillNumber(itemId+"");
                 
-                SalesWindow salesWindow = new SalesWindow();
+                Vp_SalesWindow salesWindow = new Vp_SalesWindow();
                 //salesWindow.fetchSalesDataIntoTable(salesDAO.retrieveByBillNumber(itemId));
                 salesWindow.repaint();
                 salesWindow.setVisible(true);
@@ -341,7 +340,7 @@ public class Vp_ViewStockAlerts extends javax.swing.JFrame implements ActionList
 
     public void initializeForm(){
 
-        StockDAO stockDAO = new StockDAO();
+        VpStockDAO stockDAO = new VpStockDAO();
         renderDataIntoTable(stockDAO.retrieveStocksByQuery(QueryStrings.stockQuery));
         mnuTable = new JPopupMenu();
         mitDelete = new JMenuItem("Delete");
@@ -417,7 +416,7 @@ public class Vp_ViewStockAlerts extends javax.swing.JFrame implements ActionList
         System.out.println("Id---"+itemId);
         stock = stockDAO.retrieveById(itemId);
 
-        StockEntry stockEntry = new StockEntry();
+        Vp_StockEntry stockEntry = new Vp_StockEntry();
         stockEntry.setBounds(100, 100, 800, 500);
         stockEntry.fetchStockDataIntoTable(stock);
         stockEntry.repaint();
@@ -456,7 +455,7 @@ public class Vp_ViewStockAlerts extends javax.swing.JFrame implements ActionList
                 //int rowIndex = tblCategory.getSelectedRow();
                 //System.out.println("--------INSIDE DELETE-"+tblCategory.getModel().getValueAt(tblCategory.getSelectedRow(),0));
                 long id = Long.parseLong(tblStockAlertView.getModel().getValueAt(tblStockAlertView.getSelectedRow(),tblStockAlertView.getColumnCount()-1).toString());
-                StockDAO stockDAO = new StockDAO();
+                VpStockDAO stockDAO = new VpStockDAO();
                 stockDAO.deleteStockById(id);
                 GenericUtils.removeRowFromJTable(tblStockAlertView, stockModel);
                 

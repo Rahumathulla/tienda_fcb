@@ -88,7 +88,7 @@ public class Vp_SalesSummarySelection extends javax.swing.JFrame implements Acti
         btnCancel = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setTitle("Sales Summary Report");
+        setTitle("[Sales Summary Report]");
 
         pnlStockEntry.setBorder(javax.swing.BorderFactory.createTitledBorder("Choose Options"));
 
@@ -298,20 +298,20 @@ public class Vp_SalesSummarySelection extends javax.swing.JFrame implements Acti
             
         }
         if(radB2B.isSelected()){
-            selectClause = "SELECT * FROM sales WHERE UPPER(bill_type) = 'B2B' ";
-            reportString="src\\com\\essar\\reports\\gst_b2b.jrxml";
+            selectClause = "SELECT * FROM sales_vp WHERE UPPER(bill_type) = 'B2B' ";
+            reportString="src\\com\\essar\\reports\\gst_b2b_vp.jrxml";
         }else if (radB2C.isSelected()){
-            selectClause = "SELECT * FROM sales WHERE UPPER(bill_type) = 'NORMAL' ";
+            selectClause = "SELECT * FROM sales_vp WHERE UPPER(bill_type) = 'NORMAL' ";
             if(dtpFromDate.getDate().before(cessEndDate))
-                reportString="src\\com\\essar\\reports\\gst_b2c_with_cess.jrxml";
+                reportString="src\\com\\essar\\reports\\gst_b2c_with_cess_vp.jrxml";
             else
-                reportString="src\\com\\essar\\reports\\gst_b2c.jrxml";
+                reportString="src\\com\\essar\\reports\\gst_b2c_vp.jrxml";
         }else {
-            selectClause = "SELECT * FROM sales WHERE UPPER(bill_type) = 'CONTRACTOR' ";
+            selectClause = "SELECT * FROM sales_vp WHERE UPPER(bill_type) = 'CONTRACTOR' ";
             if(dtpFromDate.getDate().before(cessEndDate))
-                reportString="src\\com\\essar\\reports\\gst_b2c_with_cess.jrxml";
+                reportString="src\\com\\essar\\reports\\gst_b2c_with_cess_vp.jrxml";
             else
-                reportString="src\\com\\essar\\reports\\gst_b2c.jrxml";
+                reportString="src\\com\\essar\\reports\\gst_b2c_vp.jrxml";
         }
         
         if(null!= txtBillNumber.getText() && !("".equals(txtBillNumber.getText()))) { 
@@ -479,8 +479,8 @@ public class Vp_SalesSummarySelection extends javax.swing.JFrame implements Acti
 
 
         //enableFormElements(false);
-        SupplierDAO supplierDAO = new SupplierDAO();
-        renderDataIntoTable(supplierDAO.retrieveAll());
+        //SupplierDAO supplierDAO = new SupplierDAO();
+        //renderDataIntoTable(supplierDAO.retrieveAll());
         
         CustomerDAO customerDAO = new CustomerDAO();
         renderCustomerDataIntoDropDown(customerDAO.retrieveAll());
@@ -535,59 +535,7 @@ public class Vp_SalesSummarySelection extends javax.swing.JFrame implements Acti
         
     }
     
-    public final void fetchStockDataIntoTable(Stock stock){
-        stockIdEdit=0;
-        stockIdEdit = stock.getItemId();
-        System.out.println("--Called fetchStockDataIntoTable"+stock.getItemName());
-        //initializeForm();
-        enableFormElements(true);
-        
-        
-        
 
-        /*if(salesDetailsModel != null){
-        salesDetailsModel.addRow(new Object[]{stock.getHsnCode(),stock.getItemName(),stock.getGstPercentage(),df.format(Double.parseDouble(stock.getGstAmount()) * Double.parseDouble(txtQuantity.getText())), itemAmount, Double.parseDouble(txtQuantity.getText()), df.format(itemAmount * Double.parseDouble(txtQuantity.getText())), stock.getItemId()});
-        //model.
-                
-        } */
-        //deriveValuesFromSalesInput();
-    }
-    
-    public void renderDataIntoTable(List<Supplier> supplierList){
-        /*DefaultTableModel supplierModel = null;
-        supplierModel = (DefaultTableModel) tblSupplier.getModel();
-        System.out.println("-----"+supplierList.size());
-        for(int i=0;i<supplierList.size();i++){
-        supplierModel.addRow(new Object[]{supplierList.get(i).getSupplierCode(),supplierList.get(i).getSupplierName(),supplierList.get(i).getSupplierContactNumber(), supplierList.get(i).getSupplierRating(), supplierList.get(i).getSupplierAddress()});
-        //model.
-        }        */
-        
-    }
-    
-   
-    
-    public void renderSupplierDataIntoDropDown(List<Supplier> supplierList){
-        Supplier supplier = null;
-        if(supplierList!= null){
-            /*for(int i=0; i<supplierList.size();i++){
-                cmbSupplier.addItem(supplierList.get(i));
-            }
-            cmbSupplier.setSelectedIndex(0);
-            supplier = (Supplier)cmbSupplier.getSelectedItem();*/     
-        }
-    }
-    
-    public void renderGstDataIntoDropDown(List<GST> gstList){
-        GST gst = null;
-        if(gstList!= null){
-            /*for(int i=0; i<gstList.size();i++){
-                cmbGST.addItem(gstList.get(i));
-            }
-            cmbGST.setSelectedIndex(0);
-            gst = (GST)cmbGST.getSelectedItem();    */  
-        }  
-    }
-    
     @Override
     public void actionPerformed(ActionEvent event) {
         try{

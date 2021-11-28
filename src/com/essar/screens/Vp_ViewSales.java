@@ -5,7 +5,7 @@
  */
 package com.essar.screens;
 
-import com.essar.dao.SalesDAO;
+import com.essar.dao.VpSalesDAO;
 import com.essar.pojos.Sales;
 import com.essar.pojos.SalesDetails;
 import com.essar.utils.TableMouseListener;
@@ -108,7 +108,7 @@ public class Vp_ViewSales extends javax.swing.JFrame implements ActionListener{
         mitView.setText("jMenuItem1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setTitle("Sales View");
+        setTitle("[Sales View]");
         setExtendedState(6);
         setName("frmProductCategory"); // NOI18N
 
@@ -349,7 +349,7 @@ public class Vp_ViewSales extends javax.swing.JFrame implements ActionListener{
 
     public void initializeForm(){
 
-        SalesDAO salesDAO = new SalesDAO();
+        VpSalesDAO salesDAO = new VpSalesDAO();
         renderDataIntoTable(salesDAO.retrieveSalesByQuery(QueryStrings.viewSalesSql));
         mnuTable = new JPopupMenu();
         /*mitDelete = new JMenuItem("Delete");
@@ -370,9 +370,9 @@ public class Vp_ViewSales extends javax.swing.JFrame implements ActionListener{
         nameColumn.setMinWidth(360);
         
         TableColumn salesIdColumn = tblSalesView.getColumnModel().getColumn(tblSalesView.getColumnCount()-1);
-        salesIdColumn.setPreferredWidth(0);
-        salesIdColumn.setMinWidth(0);
-        salesIdColumn.setMaxWidth(0);
+        salesIdColumn.setPreferredWidth(220);
+        salesIdColumn.setMinWidth(220);
+        salesIdColumn.setMaxWidth(220);
 
    
     }
@@ -410,12 +410,13 @@ public class Vp_ViewSales extends javax.swing.JFrame implements ActionListener{
     public void syncDataFromViewToTable(){
         Sales sales = null;
         salesId = tblSalesView.getModel().getValueAt(tblSalesView.getSelectedRow(),tblSalesView.getColumnCount()-1).toString();
-        SalesDAO salesDAO = new SalesDAO();
+        System.out.println("!@#----------"+salesId);
+        VpSalesDAO salesDAO = new VpSalesDAO();
         sales = salesDAO.retrieveBySalesId(Long.parseLong(salesId));
         
         
 
-        SalesWindow salesWindow = new SalesWindow();
+        Vp_SalesWindow salesWindow = new Vp_SalesWindow();
         //salesWindow.fetchSalesDataIntoTable(salesDAO.retrieveByBillNumber(salesBillNumber));
         salesWindow.repaint();
         salesWindow.setBounds(100, 20, 980, 680);
@@ -454,7 +455,7 @@ public class Vp_ViewSales extends javax.swing.JFrame implements ActionListener{
                 //System.out.println("--------INSIDE DELETE-"+tblCategory.getModel().getValueAt(tblCategory.getSelectedRow(),0));
                 //String billNumber = tblSalesView.getModel().getValueAt(tblSalesView.getSelectedRow(),tblSalesView.getColumnCount()-1).toString();
                 String salesId = tblSalesView.getModel().getValueAt(tblSalesView.getSelectedRow(),tblSalesView.getColumnCount()-1).toString();
-                SalesDAO salesDAO = new SalesDAO();
+                VpSalesDAO salesDAO = new VpSalesDAO();
                 //salesDAO.deleteSalesByBillNumber(billNumber);
                 //sales =  salesDAO.retrieveBySalesId(Long.parseLong(salesId));
                 sales =  salesDAO.retrieveBySalesId(Long.parseLong(salesId));
@@ -464,7 +465,7 @@ public class Vp_ViewSales extends javax.swing.JFrame implements ActionListener{
                 else{
                     System.out.println("SALES ID-"+salesId);                    
                     salesDAO.updateStockAfterBillDeletion(sales, salesDetailsList, true);
-                    salesDAO = new SalesDAO();//for re-instating the session
+                    salesDAO = new VpSalesDAO();//for re-instating the session
                     salesDAO.deleteSalesBySalesId(Long.parseLong(salesId));
                     GenericUtils.removeRowFromJTable(tblSalesView, salesModel);
                 }

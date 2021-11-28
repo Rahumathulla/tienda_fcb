@@ -82,7 +82,7 @@
   </NonVisualComponents>
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="2"/>
-    <Property name="title" type="java.lang.String" value="Sales"/>
+    <Property name="title" type="java.lang.String" value="[Sales]"/>
     <Property name="name" type="java.lang.String" value="frmProductCategory" noResource="true"/>
   </Properties>
   <SyntheticProperties>

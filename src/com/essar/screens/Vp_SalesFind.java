@@ -6,12 +6,7 @@
 package com.essar.screens;
 
 import com.essar.dao.CustomerDAO;
-import com.essar.dao.StockDAO;
-import com.essar.dao.SupplierDAO;
 import com.essar.pojos.Customer;
-import com.essar.pojos.GST;
-import com.essar.pojos.Stock;
-import com.essar.pojos.Supplier;
 import com.essar.utils.QueryStrings;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
@@ -79,7 +74,7 @@ public class Vp_SalesFind extends javax.swing.JFrame implements ActionListener{
         btnCancel = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setTitle("Search Sales");
+        setTitle("[Search Sales]");
 
         pnlStockEntry.setBorder(javax.swing.BorderFactory.createTitledBorder("Search by Options"));
 
@@ -329,9 +324,9 @@ public class Vp_SalesFind extends javax.swing.JFrame implements ActionListener{
                     + ", s.payable_amount"
                     + ", s.sales_date"
                     + ", s.status  "
-                    + " from sales s "
+                    + " from sales_vp s "
                     + " JOIN customer cust ON s.customer_id = cust.customer_id"
-                    + " JOIN sales_details d ON s.sales_id = d.sales_id ";
+                    + " JOIN sales_details_vp d ON s.sales_id = d.sales_id ";
         if(null!= txtBillNumber.getText() && !("".equals(txtBillNumber.getText()))) { 
             QueryStrings.viewSalesSql = selectClause + " WHERE bill_number ='"+txtBillNumber.getText()+"'";
             
@@ -407,7 +402,7 @@ public class Vp_SalesFind extends javax.swing.JFrame implements ActionListener{
         System.out.println("===> FROM DATE: "+fromDate);
         System.out.println("===> TO DATE: "+toDate);
         //this.dispose();
-        ViewSales viewSales = new ViewSales();
+        Vp_ViewSales viewSales = new Vp_ViewSales();
         //stockAlerts.setBounds(40, 40, 940, 500);
         viewSales.setVisible(true);
     }//GEN-LAST:event_btnSearchActionPerformed
@@ -508,8 +503,8 @@ public class Vp_SalesFind extends javax.swing.JFrame implements ActionListener{
         radAll.setSelected(true);
 
         //enableFormElements(false);
-        SupplierDAO supplierDAO = new SupplierDAO();
-        renderDataIntoTable(supplierDAO.retrieveAll());
+        //SupplierDAO supplierDAO = new SupplierDAO();
+        //renderDataIntoTable(supplierDAO.retrieveAll());
         
         CustomerDAO customerDAO = new CustomerDAO();
         renderCustomerDataIntoDropDown(customerDAO.retrieveAll());
@@ -542,15 +537,7 @@ public class Vp_SalesFind extends javax.swing.JFrame implements ActionListener{
             txtBillNumber.requestFocus();
             return false;
         }
-        /*if(null == txtItemName.getText() || txtItemName.getText().equalsIgnoreCase("")){
-            JOptionPane.showMessageDialog(null, "Item name "+txtItemName.getText() +" is not valid.");
-            txtItemName.requestFocus();
-            return false;
-        }*/
-        
-       
-        
-        //txtProductCategoryName.setText("");
+
         return true;
     }
     
@@ -565,80 +552,8 @@ public class Vp_SalesFind extends javax.swing.JFrame implements ActionListener{
             customer = (Customer)cmbCustomerName.getSelectedItem();            
         }
     }
-    
-    public void saveStockData(){
- 
-        Stock stock = new Stock();
-        stock.setHsnCode(txtBillNumber.getText());
-        //stock.setItemName(txtItemName.getText());
-       
-        //Float fSellingPrice = (Float.parseFloat(txtPurchasePrice.getText()))+(Float.parseFloat(txtMargin.getText()));
-        double preMarginSalesPrice = stock.getPurchasePrice()+stock.getPurchasePrice()*stock.getGstPercentage()*0.01;
-        stock.setSellingPrice(preMarginSalesPrice+preMarginSalesPrice*stock.getMargin()*0.01);
-       
 
-        StockDAO stockDAO = new StockDAO();
-        if (stockIdEdit >0){
-            stock.setItemId(stockIdEdit);
-            stockDAO.updateStock(stock);
-        }else
-            stockDAO.insertIntoDB(stock);
-        
-    }
-    
-    public final void fetchStockDataIntoTable(Stock stock){
-        stockIdEdit=0;
-        stockIdEdit = stock.getItemId();
-        System.out.println("--Called fetchStockDataIntoTable"+stock.getItemName());
-        //initializeForm();
-        enableFormElements(true);
-        
-        
-        
 
-        /*if(salesDetailsModel != null){
-        salesDetailsModel.addRow(new Object[]{stock.getHsnCode(),stock.getItemName(),stock.getGstPercentage(),df.format(Double.parseDouble(stock.getGstAmount()) * Double.parseDouble(txtQuantity.getText())), itemAmount, Double.parseDouble(txtQuantity.getText()), df.format(itemAmount * Double.parseDouble(txtQuantity.getText())), stock.getItemId()});
-        //model.
-                
-        } */
-        //deriveValuesFromSalesInput();
-    }
-    
-    public void renderDataIntoTable(List<Supplier> supplierList){
-        /*DefaultTableModel supplierModel = null;
-        supplierModel = (DefaultTableModel) tblSupplier.getModel();
-        System.out.println("-----"+supplierList.size());
-        for(int i=0;i<supplierList.size();i++){
-        supplierModel.addRow(new Object[]{supplierList.get(i).getSupplierCode(),supplierList.get(i).getSupplierName(),supplierList.get(i).getSupplierContactNumber(), supplierList.get(i).getSupplierRating(), supplierList.get(i).getSupplierAddress()});
-        //model.
-        }        */
-        
-    }
-    
-   
-    
-    public void renderSupplierDataIntoDropDown(List<Supplier> supplierList){
-        Supplier supplier = null;
-        if(supplierList!= null){
-            /*for(int i=0; i<supplierList.size();i++){
-                cmbSupplier.addItem(supplierList.get(i));
-            }
-            cmbSupplier.setSelectedIndex(0);
-            supplier = (Supplier)cmbSupplier.getSelectedItem();*/     
-        }
-    }
-    
-    public void renderGstDataIntoDropDown(List<GST> gstList){
-        GST gst = null;
-        if(gstList!= null){
-            /*for(int i=0; i<gstList.size();i++){
-                cmbGST.addItem(gstList.get(i));
-            }
-            cmbGST.setSelectedIndex(0);
-            gst = (GST)cmbGST.getSelectedItem();    */  
-        }  
-    }
-    
     @Override
     public void actionPerformed(ActionEvent event) {
         try{

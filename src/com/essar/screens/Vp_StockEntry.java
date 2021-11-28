@@ -93,7 +93,7 @@ public class Vp_StockEntry extends javax.swing.JFrame implements ActionListener{
         txtSuggestions = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setTitle("Stock Entry");
+        setTitle("[Stock Entry]");
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel1.setText("HSN Code");
