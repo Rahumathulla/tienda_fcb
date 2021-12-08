@@ -39,6 +39,9 @@
 	<field name="total_gst" class="java.lang.Double">
 		<fieldDescription><![CDATA[]]></fieldDescription>
 	</field>
+	<field name="igst" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
 	<field name="sgst" class="java.lang.Double">
 		<fieldDescription><![CDATA[]]></fieldDescription>
 	</field>
@@ -107,6 +110,9 @@
 	</variable>
 	<variable name="total_gst_28" class="java.lang.Double" calculation="Sum">
 		<variableExpression><![CDATA[$F{gst_28}]]></variableExpression>
+	</variable>
+	<variable name="total_igst" class="java.lang.Double" calculation="Sum">
+		<variableExpression><![CDATA[$F{igst}]]></variableExpression>
 	</variable>
 	<variable name="total_sgst" class="java.lang.Double" calculation="Sum">
 		<variableExpression><![CDATA[$F{sgst}]]></variableExpression>
@@ -350,7 +356,7 @@
 					<font fontName="Arial Narrow" size="9" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 					<paragraph lineSpacing="Single"/>
 				</textElement>
-				<textFieldExpression><![CDATA[0.0]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{igst}]]></textFieldExpression>
 			</textField>
 			<line>
 				<reportElement x="68" y="-1" width="1" height="16"/>
@@ -452,7 +458,7 @@
 				<textFieldExpression><![CDATA[$V{total_gst_28}]]></textFieldExpression>
 			</textField>
 			<textField pattern="#,##0.00" isBlankWhenNull="false">
-				<reportElement mode="Transparent" x="283" y="3" width="45" height="18" forecolor="#000000" backcolor="#FFFFFF"/>
+				<reportElement mode="Transparent" x="294" y="3" width="45" height="18" forecolor="#000000" backcolor="#FFFFFF"/>
 				<textElement textAlignment="Right" verticalAlignment="Top" rotation="None" markup="none">
 					<font fontName="Arial Narrow" size="9" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 					<paragraph lineSpacing="Single"/>
@@ -460,7 +466,7 @@
 				<textFieldExpression><![CDATA[$V{total_sgst}]]></textFieldExpression>
 			</textField>
 			<textField pattern="#,##0.00" isBlankWhenNull="false">
-				<reportElement mode="Transparent" x="331" y="3" width="43" height="18" forecolor="#000000" backcolor="#FFFFFF"/>
+				<reportElement mode="Transparent" x="346" y="3" width="43" height="18" forecolor="#000000" backcolor="#FFFFFF"/>
 				<textElement textAlignment="Right" verticalAlignment="Top" rotation="None" markup="none">
 					<font fontName="Arial Narrow" size="9" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 					<paragraph lineSpacing="Single"/>
@@ -468,7 +474,7 @@
 				<textFieldExpression><![CDATA[$V{total_cgst}]]></textFieldExpression>
 			</textField>
 			<textField pattern="#,##0.00" isBlankWhenNull="false">
-				<reportElement mode="Transparent" x="378" y="3" width="59" height="18" forecolor="#000000" backcolor="#FFFFFF"/>
+				<reportElement mode="Transparent" x="395" y="3" width="59" height="18" forecolor="#000000" backcolor="#FFFFFF"/>
 				<textElement textAlignment="Right" verticalAlignment="Top" rotation="None" markup="none">
 					<font fontName="Arial Narrow" size="9" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 					<paragraph lineSpacing="Single"/>
@@ -483,13 +489,6 @@
 				</textElement>
 				<textFieldExpression><![CDATA[$V{total_bill_amount}]]></textFieldExpression>
 			</textField>
-			<staticText>
-				<reportElement x="250" y="3" width="31" height="18"/>
-				<textElement textAlignment="Right">
-					<font fontName="Arial Narrow" size="9" isBold="true"/>
-				</textElement>
-				<text><![CDATA[0.0]]></text>
-			</staticText>
 			<staticText>
 				<reportElement x="3" y="3" width="48" height="18"/>
 				<textElement>
@@ -510,6 +509,14 @@
 					<font fontName="Arial Narrow" size="9" isBold="true"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$V{total_taxable_at_28}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.00" isBlankWhenNull="false">
+				<reportElement mode="Transparent" x="246" y="3" width="45" height="18" forecolor="#000000" backcolor="#FFFFFF"/>
+				<textElement textAlignment="Right" verticalAlignment="Top" rotation="None" markup="none">
+					<font fontName="Arial Narrow" size="9" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{total_igst}]]></textFieldExpression>
 			</textField>
 		</band>
 	</summary>

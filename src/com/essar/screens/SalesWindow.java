@@ -224,6 +224,7 @@ public class SalesWindow extends javax.swing.JFrame implements ActionListener{
         jScrollPane4 = new javax.swing.JScrollPane();
         txtShippingAddress = new javax.swing.JTextArea();
         chkSameAsAbove = new javax.swing.JCheckBox();
+        chkIgst = new javax.swing.JCheckBox();
         jPanel1 = new javax.swing.JPanel();
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
@@ -263,6 +264,7 @@ public class SalesWindow extends javax.swing.JFrame implements ActionListener{
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Sales");
+        setExtendedState(6);
         setName("frmProductCategory"); // NOI18N
 
         lblItemName.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
@@ -770,6 +772,13 @@ public class SalesWindow extends javax.swing.JFrame implements ActionListener{
             }
         });
 
+        chkIgst.setText("IGST");
+        chkIgst.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                chkIgstActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout pnlSupplierLayout = new javax.swing.GroupLayout(pnlSupplier);
         pnlSupplier.setLayout(pnlSupplierLayout);
         pnlSupplierLayout.setHorizontalGroup(
@@ -845,7 +854,7 @@ public class SalesWindow extends javax.swing.JFrame implements ActionListener{
                             .addComponent(txtAmountPayable))
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlSupplierLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 84, Short.MAX_VALUE)
                         .addComponent(btnSave)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(pnlSupplierLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -915,21 +924,25 @@ public class SalesWindow extends javax.swing.JFrame implements ActionListener{
                                     .addComponent(lblAvailableQty, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(cmdReset)))
                             .addGroup(pnlSupplierLayout.createSequentialGroup()
-                                .addGroup(pnlSupplierLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlSupplierLayout.createSequentialGroup()
-                                        .addComponent(chkSameAsAbove, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(pnlSupplierLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addGroup(pnlSupplierLayout.createSequentialGroup()
+                                        .addGroup(pnlSupplierLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(cmbCustomerType, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(lblCustomerType, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addGroup(pnlSupplierLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addGroup(pnlSupplierLayout.createSequentialGroup()
+                                                .addGap(2, 2, 2)
+                                                .addComponent(cmbCustomerName, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addComponent(lblCustomerName, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addGroup(pnlSupplierLayout.createSequentialGroup()
+                                        .addGroup(pnlSupplierLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(chkSameAsAbove, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(chkIgst, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                         .addGroup(pnlSupplierLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addComponent(lblDisplayName1, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 235, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                    .addGroup(pnlSupplierLayout.createSequentialGroup()
-                                        .addComponent(cmbCustomerType, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(cmbCustomerName, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(pnlSupplierLayout.createSequentialGroup()
-                                        .addComponent(lblCustomerType, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(lblCustomerName, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                            .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 235, javax.swing.GroupLayout.PREFERRED_SIZE))))
                                 .addGap(18, 18, 18)
                                 .addGroup(pnlSupplierLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(dtpSalesDate, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -978,7 +991,10 @@ public class SalesWindow extends javax.swing.JFrame implements ActionListener{
                                         .addComponent(lblHSNCode1)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(txtVehicleDetails, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(chkSameAsAbove)
+                                    .addGroup(pnlSupplierLayout.createSequentialGroup()
+                                        .addComponent(chkSameAsAbove)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(chkIgst))
                                     .addGroup(pnlSupplierLayout.createSequentialGroup()
                                         .addComponent(lblDisplayName1)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -1116,7 +1132,7 @@ public class SalesWindow extends javax.swing.JFrame implements ActionListener{
                     .addGroup(layout.createSequentialGroup()
                         .addGap(441, 441, 441)
                         .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(13, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1281,52 +1297,57 @@ public class SalesWindow extends javax.swing.JFrame implements ActionListener{
         // TODO add your handling code here:
         //txtCess.setVisible(false);
         //lblCess.setVisible(false);
-        if(btnSave.getText().equalsIgnoreCase("new")){
-            saleIdEdit = 0;
-            PricingTierDAO pricingTierDAO = new PricingTierDAO();
-            renderDataIntoDropDown(pricingTierDAO.retrieveAll());
-            cmbCustomerName.removeAllItems();
-            CustomerDAO customerDAO = new CustomerDAO();
-            renderCustomerDataIntoDropDown(customerDAO.retrieveAll());
+        try{
+            if(btnSave.getText().equalsIgnoreCase("new")){
+                saleIdEdit = 0;
+                PricingTierDAO pricingTierDAO = new PricingTierDAO();
+                renderDataIntoDropDown(pricingTierDAO.retrieveAll());
+                cmbCustomerName.removeAllItems();
+                CustomerDAO customerDAO = new CustomerDAO();
+                renderCustomerDataIntoDropDown(customerDAO.retrieveAll());
 
-            //Moved to Bill type Drop Down for different series of billing
-            /*SalesDAO billGenDAO =  new SalesDAO();
-            txtBillNumber.setText(billGenDAO.generateBillNumber()+"");*/
-            ((DefaultTableModel)tblSalesDetails.getModel()).setNumRows(0);
-            btnSave.setText("Save");
-            btnSave.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/save.png")));
-            enableFormElements(true);
-            //if(null==dtpSalesDate.getDate()){
-                dtpSalesDate.setDate(new Date());
-            //}
-            SuggestionExampleMain.populateItemNames(this, txtItemName);
-            //txtItemName.requestFocus();
-            txtDisplayName.requestFocus();
-            txtShippingAddress.setVisible(true);
-            txtVehicleDetails.setVisible(true);
-            chkSameAsAbove.setEnabled(true);
+                //Moved to Bill type Drop Down for different series of billing
+                /*SalesDAO billGenDAO =  new SalesDAO();
+                txtBillNumber.setText(billGenDAO.generateBillNumber()+"");*/
+                ((DefaultTableModel)tblSalesDetails.getModel()).setNumRows(0);
+                btnSave.setText("Save");
+                btnSave.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/save.png")));
+                enableFormElements(true);
+                //if(null==dtpSalesDate.getDate()){
+                    dtpSalesDate.setDate(new Date());
+                //}
+                SuggestionExampleMain.populateItemNames(this, txtItemName);
+                //txtItemName.requestFocus();
+                txtDisplayName.requestFocus();
+                txtShippingAddress.setVisible(true);
+                txtVehicleDetails.setVisible(true);
+                chkSameAsAbove.setEnabled(true);
 
-        }else if(btnSave.getText().equalsIgnoreCase("save")){
-            //Implement Save Logic
-            if(validateSalesDetails()){
-                saveSalesForm();
+            }else if(btnSave.getText().equalsIgnoreCase("save")){
+                //Implement Save Logic
+                if(validateSalesDetails()){
+                    saveSalesForm();
+                    initializeForm();
+                }
+                /*this.dispose();
+                SalesWindow salesWindow = new SalesWindow();
+                salesWindow.setBounds(100, 60, 960, 590);
+                salesWindow.setVisible(true);*/
+
+            }else if(btnSave.getText().equalsIgnoreCase("update")){
+
+                updateSalesAfterReturn(returnList);
                 initializeForm();
+                /*this.dispose();
+                SalesWindow salesWindow = new SalesWindow();
+                salesWindow.setBounds(100, 60, 960, 590);
+                salesWindow.setVisible(true);*/
+
             }
-            /*this.dispose();
-            SalesWindow salesWindow = new SalesWindow();
-            salesWindow.setBounds(100, 60, 960, 590);
-            salesWindow.setVisible(true);*/
-
-        }else if(btnSave.getText().equalsIgnoreCase("update")){
-
-            updateSalesAfterReturn(returnList);
-            initializeForm();
-            /*this.dispose();
-            SalesWindow salesWindow = new SalesWindow();
-            salesWindow.setBounds(100, 60, 960, 590);
-            salesWindow.setVisible(true);*/
-
         }
+        catch(Exception e){
+                
+                }
     }//GEN-LAST:event_btnSaveActionPerformed
 
     private void radCashActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radCashActionPerformed
@@ -1344,19 +1365,25 @@ public class SalesWindow extends javax.swing.JFrame implements ActionListener{
 
     private void cmbCustomerNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbCustomerNameActionPerformed
         // TODO add your handling code here:
-        if("new".equalsIgnoreCase(((Customer) cmbCustomerName.getSelectedItem()).getCustomerName())
-                || "default".equalsIgnoreCase(((Customer) cmbCustomerName.getSelectedItem()).getCustomerName())){
-            txtDisplayName.setText("");
-            txtShippingAddress.setText("");
-            txtDisplayName.setVisible(true);
-            lblDisplayName.setVisible(true);
-            txtDisplayName.requestFocus();
-        }else{
-            txtDisplayName.setText(((Customer) cmbCustomerName.getSelectedItem()).getCustomerName()+", \n"+((Customer) cmbCustomerName.getSelectedItem()).getAddress());
-            txtItemName.requestFocus();
-            txtDisplayName.setVisible(true);
-            lblDisplayName.setVisible(true);
-            txtVehicleDetails.requestFocus();
+        try{
+            if(null == (((Customer) cmbCustomerName.getSelectedItem()).getCustomerName())
+                    || "new".equalsIgnoreCase(((Customer) cmbCustomerName.getSelectedItem()).getCustomerName())
+                    || "default".equalsIgnoreCase(((Customer) cmbCustomerName.getSelectedItem()).getCustomerName())){                    
+                txtDisplayName.setText("");
+                txtShippingAddress.setText("");
+                txtDisplayName.setVisible(true);
+                lblDisplayName.setVisible(true);
+                txtDisplayName.requestFocus();
+            }else{
+                txtDisplayName.setText(((Customer) cmbCustomerName.getSelectedItem()).getCustomerName()+", \n"+((Customer) cmbCustomerName.getSelectedItem()).getAddress());
+                txtItemName.requestFocus();
+                txtDisplayName.setVisible(true);
+                lblDisplayName.setVisible(true);
+                txtVehicleDetails.requestFocus();
+            }
+        }
+        catch(Exception e){
+                e.printStackTrace();
         }
     }//GEN-LAST:event_cmbCustomerNameActionPerformed
 
@@ -1452,7 +1479,8 @@ public class SalesWindow extends javax.swing.JFrame implements ActionListener{
 
     private void txtItemNameKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtItemNameKeyReleased
         // TODO add your handling code here:
-        if(evt.getKeyCode()== KeyEvent.VK_ENTER){
+        if(evt.getKeyCode()== KeyEvent.VK_ENTER && null != txtItemName.getText()
+                && !("".equalsIgnoreCase(txtItemName.getText()))){
             populateItemDetails();
         }
     }//GEN-LAST:event_txtItemNameKeyReleased
@@ -1529,6 +1557,10 @@ public class SalesWindow extends javax.swing.JFrame implements ActionListener{
                 JOptionPane.showMessageDialog(this, "Inside InputMethodTextChanged");
         showHideCessFields(dtpSalesDate.getDate());
     }//GEN-LAST:event_dtpSalesDateInputMethodTextChanged
+
+    private void chkIgstActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chkIgstActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_chkIgstActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1755,8 +1787,15 @@ public class SalesWindow extends javax.swing.JFrame implements ActionListener{
         sales.setDiscount(Double.parseDouble(txtDiscountAmount.getText()));
         sales.setPayableAmount(Double.parseDouble(txtAmountPayable.getText()));
         sales.setTotalGst(Double.parseDouble(txtTotalGst.getText()));
-        sales.setSgst(Double.parseDouble(txtSGst.getText()));
-        sales.setCgst(Double.parseDouble(txtCGst.getText()));
+        if(chkIgst.isSelected()){
+            sales.setIgst(Double.parseDouble(txtTotalGst.getText()));
+            sales.setSgst(0);
+            sales.setCgst(0);
+        }else{
+            sales.setSgst(Double.parseDouble(txtSGst.getText()));
+            sales.setCgst(Double.parseDouble(txtCGst.getText()));
+            sales.setIgst(0);
+        }
         sales.setGstAt12(Double.parseDouble(txtGst12.getText()));
         sales.setGstAt18(Double.parseDouble(txtGst18.getText()));
         sales.setGstAt28(Double.parseDouble(txtGst28.getText()));
@@ -1832,8 +1871,15 @@ public class SalesWindow extends javax.swing.JFrame implements ActionListener{
         sales.setDiscount(Double.parseDouble(txtDiscountAmount.getText()));
         sales.setPayableAmount(Double.parseDouble(txtAmountPayable.getText()));
         sales.setTotalGst(Double.parseDouble(txtTotalGst.getText()));
-        sales.setSgst(Double.parseDouble(txtSGst.getText()));
-        sales.setCgst(Double.parseDouble(txtCGst.getText()));
+        if(chkIgst.isSelected()){
+            sales.setIgst(Double.parseDouble(txtTotalGst.getText()));
+            sales.setSgst(0);
+            sales.setCgst(0);
+        }else{
+            sales.setSgst(Double.parseDouble(txtSGst.getText()));
+            sales.setCgst(Double.parseDouble(txtCGst.getText()));
+            sales.setIgst(0);
+        }
         sales.setGstAt12(Double.parseDouble(txtGst12.getText()));
         sales.setGstAt18(Double.parseDouble(txtGst18.getText()));
         sales.setGstAt28(Double.parseDouble(txtGst28.getText()));
@@ -1931,6 +1977,7 @@ public class SalesWindow extends javax.swing.JFrame implements ActionListener{
         public void renderCustomerDataIntoDropDown(List<Customer> customerList){
         Customer customer = null;
         //cmbCustomerName.removeAllItems();
+            System.out.println("!@#-----"+customerList.size());
         if(customerList!= null){
             for(int i=0; i<customerList.size();i++){
                 cmbCustomerName.addItem(customerList.get(i));
@@ -2025,6 +2072,10 @@ public class SalesWindow extends javax.swing.JFrame implements ActionListener{
         txtTotalAmount.setText(sales.getBillAmount()+"");
         txtDiscountAmount.setText(sales.getDiscount()+"");
         txtAmountPayable.setText(sales.getPayableAmount()+"");
+        if(sales.getIgst()>0)
+            chkIgst.setSelected(true);
+        else
+            chkIgst.setSelected(false);
         txtTotalGst.setText(sales.getTotalGst()+"");
         txtSGst.setText(sales.getSgst()+"");
         txtCGst.setText(sales.getCgst()+"");
@@ -2309,6 +2360,7 @@ public class SalesWindow extends javax.swing.JFrame implements ActionListener{
     private javax.swing.JButton btnViewAll;
     private javax.swing.ButtonGroup buttonGroup2;
     private javax.swing.ButtonGroup buttonGroup3;
+    private javax.swing.JCheckBox chkIgst;
     private javax.swing.JCheckBox chkSameAsAbove;
     private javax.swing.JComboBox cmbCustomerName;
     private javax.swing.JComboBox cmbCustomerType;

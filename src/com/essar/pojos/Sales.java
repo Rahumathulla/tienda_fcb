@@ -44,7 +44,7 @@ public class Sales {
     long billSeqNumber;
     String vehicleDetails;
     String shippingAddress;                  
-    
+    double igst;
     List<SalesDetails> salesDetails;
 
     public long getSalesId() {
@@ -301,7 +301,15 @@ public class Sales {
     public void setShippingAddress(String shippingAddress) {
         this.shippingAddress = shippingAddress;
     }
-    
+
+    public double getIgst() {
+        return igst;
+    }
+
+    public void setIgst(double igst) {
+        this.igst = igst;
+    }
+      
     
        
 }

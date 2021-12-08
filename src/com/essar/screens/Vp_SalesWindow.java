@@ -1334,19 +1334,24 @@ public class Vp_SalesWindow extends javax.swing.JFrame implements ActionListener
 
     private void cmbCustomerNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbCustomerNameActionPerformed
         // TODO add your handling code here:
-        if("new".equalsIgnoreCase(((Customer) cmbCustomerName.getSelectedItem()).getCustomerName())
-                || "default".equalsIgnoreCase(((Customer) cmbCustomerName.getSelectedItem()).getCustomerName())){
-            txtDisplayName.setText("");
-            txtShippingAddress.setText("");
-            txtDisplayName.setVisible(true);
-            lblDisplayName.setVisible(true);
-            txtDisplayName.requestFocus();
-        }else{
-            txtDisplayName.setText(((Customer) cmbCustomerName.getSelectedItem()).getCustomerName()+", \n"+((Customer) cmbCustomerName.getSelectedItem()).getAddress());
-            txtItemName.requestFocus();
-            txtDisplayName.setVisible(true);
-            lblDisplayName.setVisible(true);
-            txtVehicleDetails.requestFocus();
+        try{
+            if("new".equalsIgnoreCase(((Customer) cmbCustomerName.getSelectedItem()).getCustomerName())
+                    || "default".equalsIgnoreCase(((Customer) cmbCustomerName.getSelectedItem()).getCustomerName())){
+                txtDisplayName.setText("");
+                txtShippingAddress.setText("");
+                txtDisplayName.setVisible(true);
+                lblDisplayName.setVisible(true);
+                txtDisplayName.requestFocus();
+            }else{
+                txtDisplayName.setText(((Customer) cmbCustomerName.getSelectedItem()).getCustomerName()+", \n"+((Customer) cmbCustomerName.getSelectedItem()).getAddress());
+                txtItemName.requestFocus();
+                txtDisplayName.setVisible(true);
+                lblDisplayName.setVisible(true);
+                txtVehicleDetails.requestFocus();
+            }
+        }
+        catch(Exception e){
+                e.printStackTrace();
         }
     }//GEN-LAST:event_cmbCustomerNameActionPerformed
 

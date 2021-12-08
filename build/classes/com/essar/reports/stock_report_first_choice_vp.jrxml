@@ -41,7 +41,7 @@ FROM
 					<textElement textAlignment="Center">
 						<font size="10" isBold="false"/>
 					</textElement>
-					<text><![CDATA[Althara Junction, Vamanapuram 
+					<text><![CDATA[Ambalam Mukku, Vamanapuram PO.
 Head Office:Thalavila Mukku, Thiruvananthapuram
 Kerala, India. Ph: 7025077775, 9316002222]]></text>
 				</staticText>

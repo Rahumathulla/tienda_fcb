@@ -370,9 +370,9 @@ public class Vp_ViewSales extends javax.swing.JFrame implements ActionListener{
         nameColumn.setMinWidth(360);
         
         TableColumn salesIdColumn = tblSalesView.getColumnModel().getColumn(tblSalesView.getColumnCount()-1);
-        salesIdColumn.setPreferredWidth(220);
-        salesIdColumn.setMinWidth(220);
-        salesIdColumn.setMaxWidth(220);
+        salesIdColumn.setPreferredWidth(0);
+        salesIdColumn.setMinWidth(0);
+        salesIdColumn.setMaxWidth(0);
 
    
     }

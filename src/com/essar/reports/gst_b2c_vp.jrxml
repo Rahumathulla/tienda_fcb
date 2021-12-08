@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="1f145bbd-b556-492a-afaf-a907d24a05f3">
 	<property name="ireport.zoom" value="1.3310000000000008"/>
 	<property name="ireport.x" value="0"/>
 	<property name="ireport.y" value="0"/>
@@ -126,56 +126,56 @@
 	<title>
 		<band height="89" splitType="Stretch">
 			<staticText>
-				<reportElement x="199" y="2" width="219" height="23"/>
+				<reportElement x="199" y="2" width="219" height="23" uuid="b9a2ff9d-c42e-47bb-bf94-dd1a03cec412"/>
 				<textElement textAlignment="Center">
 					<font size="16" isBold="true"/>
 				</textElement>
 				<text><![CDATA[FIRST CHOICE BUILDMART]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="182" y="23" width="247" height="38"/>
+				<reportElement x="182" y="23" width="247" height="38" uuid="8a2e9ebf-eb39-466f-add0-447fa151dc77"/>
 				<textElement textAlignment="Center"/>
-				<text><![CDATA[Althara Junction, Vamanapuram 
+				<text><![CDATA[Ambalam Mukku, Vamanapuram PO.
 Head Office:Thalavila Mukku, Thiruvananthapuram
 Kerala, India. Ph: 7025077775, 9316002222]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="1" y="4" width="140" height="21"/>
+				<reportElement x="1" y="4" width="140" height="21" uuid="54378fbc-73a3-4d1a-a16c-ce3c6982f8ea"/>
 				<textElement>
 					<font fontName="Arial" size="9"/>
 				</textElement>
 				<text><![CDATA[GSTIN: 32AIUPJ0602M1Z9]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="1" y="22" width="100" height="15" forecolor="#333333"/>
+				<reportElement x="1" y="22" width="100" height="15" forecolor="#333333" uuid="1af9a023-a250-48b7-84e2-7067a3f80361"/>
 				<textElement>
 					<font fontName="Arial" size="9" isBold="true"/>
 				</textElement>
 				<text><![CDATA[State: Kerala]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="454" y="52" width="27" height="13"/>
+				<reportElement x="454" y="52" width="27" height="13" uuid="6f823f4e-1ba4-4eba-a5e9-7a5dbf241280"/>
 				<textElement>
 					<font fontName="Arial" size="9" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Date: ]]></text>
 			</staticText>
 			<textField pattern="dd/MM/yyyy">
-				<reportElement x="481" y="52" width="71" height="13"/>
+				<reportElement x="481" y="52" width="71" height="13" uuid="63e77d77-c48c-4311-b10c-b4ca22c2d282"/>
 				<textElement textAlignment="Right">
 					<font fontName="Arial" size="9"/>
 				</textElement>
 				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="224" y="61" width="150" height="23"/>
+				<reportElement x="224" y="61" width="150" height="23" uuid="07728a04-2cb3-4e96-80b9-382b4579d1e3"/>
 				<textElement textAlignment="Center" verticalAlignment="Bottom">
 					<font size="12" isBold="true" isUnderline="true"/>
 				</textElement>
 				<text><![CDATA[SALES SUMMARY - (B2C)]]></text>
 			</staticText>
 			<image>
-				<reportElement x="129" y="-4" width="104" height="65"/>
+				<reportElement x="129" y="-4" width="104" height="65" uuid="2f23bbdb-32a9-4316-94b7-e4e1a0770f80"/>
 				<imageExpression><![CDATA["D:\\Applications\\Tienda\\reports\\logo_grey.png"]]></imageExpression>
 			</image>
 		</band>
@@ -183,103 +183,103 @@ Kerala, India. Ph: 7025077775, 9316002222]]></text>
 	<pageHeader>
 		<band height="27" splitType="Stretch">
 			<staticText>
-				<reportElement x="3" y="10" width="48" height="12"/>
+				<reportElement x="3" y="10" width="48" height="12" uuid="2b18f8c1-c60d-4de3-9832-d3de44e615de"/>
 				<textElement>
 					<font fontName="Arial Narrow" size="8" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Bill Number]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="396" y="10" width="57" height="12"/>
+				<reportElement x="396" y="10" width="57" height="12" uuid="28a6fa3b-b5c8-46db-8425-1bf7544472b4"/>
 				<textElement textAlignment="Center">
 					<font fontName="Arial Narrow" size="8" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Total GST Amt]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="73" y="10" width="48" height="12"/>
+				<reportElement x="73" y="10" width="48" height="12" uuid="2c360bc6-eec2-4731-9891-033237db3e16"/>
 				<textElement>
 					<font fontName="Arial Narrow" size="8" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Bill Date]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="298" y="10" width="42" height="12"/>
+				<reportElement x="298" y="10" width="42" height="12" uuid="aa855f81-3472-496c-b287-2ec12a7f0dc8"/>
 				<textElement textAlignment="Center">
 					<font fontName="Arial Narrow" size="8" isBold="true"/>
 				</textElement>
 				<text><![CDATA[SGST Amt]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="204" y="10" width="42" height="12"/>
+				<reportElement x="204" y="10" width="42" height="12" uuid="b25696cd-2471-4a25-bbe8-76208332e9fc"/>
 				<textElement textAlignment="Center">
 					<font fontName="Arial Narrow" size="8" isBold="true"/>
 				</textElement>
 				<text><![CDATA[GST at 28%]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="255" y="10" width="33" height="12"/>
+				<reportElement x="255" y="10" width="33" height="12" uuid="1cd69b05-179c-4912-93fb-a3764212b77a"/>
 				<textElement textAlignment="Center">
 					<font fontName="Arial Narrow" size="8" isBold="true"/>
 				</textElement>
 				<text><![CDATA[IGST Amt]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="464" y="10" width="87" height="12"/>
+				<reportElement x="464" y="10" width="87" height="12" uuid="9b3b170a-3bb1-4786-8d3c-93ef58f1e106"/>
 				<textElement textAlignment="Center">
 					<font fontName="Arial Narrow" size="8" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Total Bill Amt]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="347" y="10" width="44" height="12"/>
+				<reportElement x="347" y="10" width="44" height="12" uuid="dc7e06a8-da1e-4669-a456-f7c96fc56e1c"/>
 				<textElement textAlignment="Center">
 					<font fontName="Arial Narrow" size="8" isBold="true"/>
 				</textElement>
 				<text><![CDATA[CGST Amt]]></text>
 			</staticText>
 			<line>
-				<reportElement x="0" y="8" width="555" height="1"/>
+				<reportElement x="0" y="8" width="555" height="1" uuid="fe58942a-79ac-4347-8158-bca3d21d2768"/>
 			</line>
 			<line>
-				<reportElement x="0" y="25" width="555" height="1"/>
+				<reportElement x="0" y="25" width="555" height="1" uuid="3227614b-b9c0-48f8-985c-83b8ad399537"/>
 			</line>
 			<line>
-				<reportElement x="0" y="9" width="1" height="16"/>
+				<reportElement x="0" y="9" width="1" height="16" uuid="ba677ce0-af10-4d2e-81a3-25b096afcb7d"/>
 			</line>
 			<line>
-				<reportElement x="68" y="9" width="1" height="16"/>
+				<reportElement x="68" y="9" width="1" height="16" uuid="56c1c6f8-b4d0-4786-b245-93ac19a3864b"/>
 			</line>
 			<line>
-				<reportElement x="123" y="9" width="1" height="16"/>
+				<reportElement x="123" y="9" width="1" height="16" uuid="df3becc2-b1ad-41fd-b0ee-11066c35785c"/>
 			</line>
 			<line>
-				<reportElement x="251" y="9" width="1" height="16"/>
+				<reportElement x="251" y="9" width="1" height="16" uuid="7b8e34ca-6d9c-4626-9d0f-3a9054111948"/>
 			</line>
 			<line>
-				<reportElement x="293" y="9" width="1" height="16"/>
+				<reportElement x="293" y="9" width="1" height="16" uuid="e326e11e-df82-45c5-8a81-d820acad099a"/>
 			</line>
 			<line>
-				<reportElement x="343" y="9" width="1" height="16"/>
+				<reportElement x="343" y="9" width="1" height="16" uuid="67468c28-c6e7-4f25-b04e-05ba581eb945"/>
 			</line>
 			<line>
-				<reportElement x="394" y="9" width="1" height="16"/>
+				<reportElement x="394" y="9" width="1" height="16" uuid="8ddb5377-dd2d-4f3d-a2fb-f03f5b39248d"/>
 			</line>
 			<line>
-				<reportElement x="458" y="9" width="1" height="16"/>
+				<reportElement x="458" y="9" width="1" height="16" uuid="40298360-c42d-4e40-afdd-d86617284645"/>
 			</line>
 			<line>
-				<reportElement x="554" y="9" width="1" height="16"/>
+				<reportElement x="554" y="9" width="1" height="16" uuid="a7571de7-2285-4a1a-95cc-b6a93b4fc23a"/>
 			</line>
 			<staticText>
-				<reportElement x="125" y="10" width="75" height="12"/>
+				<reportElement x="125" y="10" width="75" height="12" uuid="17b86d45-86ee-4820-8cc7-1237f11c9385"/>
 				<textElement textAlignment="Center">
 					<font fontName="Arial Narrow" size="8" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Taxable Amt at 28%]]></text>
 			</staticText>
 			<line>
-				<reportElement x="203" y="9" width="1" height="16"/>
+				<reportElement x="203" y="9" width="1" height="16" uuid="3a60a19d-8527-4f6b-bdbf-e285cb3c70d1"/>
 			</line>
 		</band>
 	</pageHeader>
@@ -289,28 +289,28 @@ Kerala, India. Ph: 7025077775, 9316002222]]></text>
 	<detail>
 		<band height="15" splitType="Stretch">
 			<textField>
-				<reportElement x="4" y="0" width="43" height="15"/>
+				<reportElement x="4" y="0" width="43" height="15" uuid="e2e1e592-0569-4a3c-bec6-edc8589966e8"/>
 				<textElement>
 					<font fontName="Arial Narrow" size="9"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{bill_number}]]></textFieldExpression>
 			</textField>
 			<textField pattern="dd/MM/yyyy">
-				<reportElement x="74" y="0" width="48" height="15"/>
+				<reportElement x="74" y="0" width="48" height="15" uuid="0b8f177f-808a-48cc-b5f3-b991e8a92ef2"/>
 				<textElement>
 					<font fontName="Arial Narrow" size="9"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{sales_date}]]></textFieldExpression>
 			</textField>
 			<textField pattern="#,##0.00">
-				<reportElement x="464" y="0" width="88" height="15"/>
+				<reportElement x="463" y="0" width="88" height="15" uuid="26de760b-3c27-4a25-8982-a81be0346973"/>
 				<textElement textAlignment="Right">
 					<font fontName="Arial Narrow" size="9"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{bill_amount}]]></textFieldExpression>
 			</textField>
 			<textField pattern="#,##0.00" isBlankWhenNull="false">
-				<reportElement mode="Transparent" x="204" y="0" width="42" height="15" forecolor="#000000" backcolor="#FFFFFF"/>
+				<reportElement mode="Transparent" x="204" y="0" width="42" height="15" forecolor="#000000" backcolor="#FFFFFF" uuid="3fdeffde-133a-4542-82bb-dd9f7569999c"/>
 				<textElement textAlignment="Right" verticalAlignment="Top" rotation="None" markup="none">
 					<font fontName="Arial Narrow" size="9" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 					<paragraph lineSpacing="Single"/>
@@ -318,7 +318,7 @@ Kerala, India. Ph: 7025077775, 9316002222]]></text>
 				<textFieldExpression><![CDATA[$F{gst_28}]]></textFieldExpression>
 			</textField>
 			<textField pattern="#,##0.00" isBlankWhenNull="false">
-				<reportElement mode="Transparent" x="298" y="0" width="42" height="15" forecolor="#000000" backcolor="#FFFFFF"/>
+				<reportElement mode="Transparent" x="298" y="0" width="42" height="15" forecolor="#000000" backcolor="#FFFFFF" uuid="b2f48a67-cc3c-440e-b814-77efe0cfa554"/>
 				<textElement textAlignment="Right" verticalAlignment="Top" rotation="None" markup="none">
 					<font fontName="Arial Narrow" size="9" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 					<paragraph lineSpacing="Single"/>
@@ -326,7 +326,7 @@ Kerala, India. Ph: 7025077775, 9316002222]]></text>
 				<textFieldExpression><![CDATA[$F{sgst}]]></textFieldExpression>
 			</textField>
 			<textField pattern="#,##0.00" isBlankWhenNull="false">
-				<reportElement mode="Transparent" x="347" y="0" width="43" height="15" forecolor="#000000" backcolor="#FFFFFF"/>
+				<reportElement mode="Transparent" x="347" y="0" width="43" height="15" forecolor="#000000" backcolor="#FFFFFF" uuid="6822b726-3ef2-456d-8b98-5c91e2d5f727"/>
 				<textElement textAlignment="Right" verticalAlignment="Top" rotation="None" markup="none">
 					<font fontName="Arial Narrow" size="9" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 					<paragraph lineSpacing="Single"/>
@@ -334,7 +334,7 @@ Kerala, India. Ph: 7025077775, 9316002222]]></text>
 				<textFieldExpression><![CDATA[$F{cgst}]]></textFieldExpression>
 			</textField>
 			<textField pattern="#,##0.00" isBlankWhenNull="false">
-				<reportElement mode="Transparent" x="394" y="0" width="58" height="15" forecolor="#000000" backcolor="#FFFFFF"/>
+				<reportElement mode="Transparent" x="394" y="0" width="58" height="15" forecolor="#000000" backcolor="#FFFFFF" uuid="99ad5356-881e-4cd9-9479-3f35d7a2b138"/>
 				<textElement textAlignment="Right" verticalAlignment="Top" rotation="None" markup="none">
 					<font fontName="Arial Narrow" size="9" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 					<paragraph lineSpacing="Single"/>
@@ -342,7 +342,7 @@ Kerala, India. Ph: 7025077775, 9316002222]]></text>
 				<textFieldExpression><![CDATA[$F{total_gst}]]></textFieldExpression>
 			</textField>
 			<textField pattern="#,##0.00" isBlankWhenNull="false">
-				<reportElement mode="Transparent" x="257" y="0" width="31" height="15" forecolor="#000000" backcolor="#FFFFFF"/>
+				<reportElement mode="Transparent" x="257" y="0" width="31" height="15" forecolor="#000000" backcolor="#FFFFFF" uuid="cfa24d05-e701-4be5-a1bb-856dc091c46a"/>
 				<textElement textAlignment="Right" verticalAlignment="Top" rotation="None" markup="none">
 					<font fontName="Arial Narrow" size="9" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 					<paragraph lineSpacing="Single"/>
@@ -350,37 +350,37 @@ Kerala, India. Ph: 7025077775, 9316002222]]></text>
 				<textFieldExpression><![CDATA[0.0]]></textFieldExpression>
 			</textField>
 			<line>
-				<reportElement x="68" y="-1" width="1" height="16"/>
+				<reportElement x="68" y="-1" width="1" height="16" uuid="3ee1990e-03ad-47e7-9989-eb87c5d9c9c8"/>
 			</line>
 			<line>
-				<reportElement x="0" y="-1" width="1" height="16"/>
+				<reportElement x="0" y="-1" width="1" height="16" uuid="e5856439-a158-4d22-be47-d9846ed21bbd"/>
 			</line>
 			<line>
-				<reportElement x="123" y="-1" width="1" height="16"/>
+				<reportElement x="123" y="-1" width="1" height="16" uuid="a131ebf0-e252-4e85-bed4-487a96ef5fd2"/>
 			</line>
 			<line>
-				<reportElement x="203" y="-1" width="1" height="16"/>
+				<reportElement x="203" y="-1" width="1" height="16" uuid="c98675be-3b3c-46f6-b109-efe269290171"/>
 			</line>
 			<line>
-				<reportElement x="251" y="-1" width="1" height="16"/>
+				<reportElement x="251" y="-1" width="1" height="16" uuid="1a20e103-f8ad-4e77-a28c-2117c501d022"/>
 			</line>
 			<line>
-				<reportElement x="293" y="-1" width="1" height="16"/>
+				<reportElement x="293" y="-1" width="1" height="16" uuid="f1b836ef-b765-4a8f-9939-286408a92593"/>
 			</line>
 			<line>
-				<reportElement x="343" y="-1" width="1" height="16"/>
+				<reportElement x="343" y="-1" width="1" height="16" uuid="fb862ab3-871e-4ae2-bb1f-256b44f7951a"/>
 			</line>
 			<line>
-				<reportElement x="394" y="-1" width="1" height="16"/>
+				<reportElement x="394" y="-1" width="1" height="16" uuid="5d50b143-9eba-4f80-a463-c9d32f0e65d1"/>
 			</line>
 			<line>
-				<reportElement x="458" y="-1" width="1" height="16"/>
+				<reportElement x="458" y="-1" width="1" height="16" uuid="39ba9173-6d3e-4a6f-a38b-5c2bf69fc93d"/>
 			</line>
 			<line>
-				<reportElement x="554" y="-1" width="1" height="16"/>
+				<reportElement x="554" y="-1" width="1" height="16" uuid="a8abed0b-d8ef-4df8-badc-56ee9749e2a8"/>
 			</line>
 			<textField pattern="#,##0.00">
-				<reportElement x="125" y="0" width="75" height="15"/>
+				<reportElement x="125" y="0" width="75" height="15" uuid="b0724ec4-7f77-4b4e-aaba-005feb9505c4"/>
 				<textElement textAlignment="Right">
 					<font fontName="Arial Narrow" size="9"/>
 				</textElement>
@@ -394,42 +394,42 @@ Kerala, India. Ph: 7025077775, 9316002222]]></text>
 	<pageFooter>
 		<band height="54" splitType="Stretch">
 			<line>
-				<reportElement x="0" y="-2" width="555" height="1"/>
+				<reportElement x="0" y="-2" width="555" height="1" uuid="4462832e-d5c1-49a3-a0f8-2e0c9eeec91f"/>
 			</line>
 			<textField>
-				<reportElement x="0" y="34" width="44" height="20"/>
+				<reportElement x="0" y="34" width="44" height="20" uuid="d4fdc166-29cc-4f84-8c62-2517277af186"/>
 				<textElement textAlignment="Right">
 					<font fontName="Arial" size="8"/>
 				</textElement>
 				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
 			</textField>
 			<textField evaluationTime="Report">
-				<reportElement x="610" y="34" width="40" height="20"/>
+				<reportElement x="610" y="34" width="40" height="20" uuid="bfc45dd1-00e8-4680-bd3d-50715909f5b8"/>
 				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
 			</textField>
 			<textField evaluationTime="Report">
-				<reportElement x="41" y="33" width="16" height="19"/>
+				<reportElement x="41" y="33" width="16" height="19" uuid="fbbdd45a-0014-49ce-957b-3153fed5d39c"/>
 				<textElement textAlignment="Right">
 					<font fontName="Arial" size="8"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="425" y="2" width="19" height="20"/>
+				<reportElement x="425" y="2" width="19" height="20" uuid="bcc15ac4-b70e-4ed3-897e-39c82e07be2f"/>
 				<textElement textAlignment="Right">
 					<font fontName="Monotype Corsiva"/>
 				</textElement>
 				<text><![CDATA[for]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="443" y="2" width="110" height="20"/>
+				<reportElement x="443" y="2" width="110" height="20" uuid="b70ec7b1-53af-42ef-8b0d-f1f0a572966e"/>
 				<textElement textAlignment="Right">
 					<font isBold="true"/>
 				</textElement>
 				<text><![CDATA[First Choice BuildMart]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="452" y="34" width="100" height="20"/>
+				<reportElement x="452" y="34" width="100" height="20" uuid="47479e05-52a6-4e48-94b8-175fc6210cc6"/>
 				<textElement textAlignment="Right" verticalAlignment="Bottom"/>
 				<text><![CDATA[Authorized Signatory]]></text>
 			</staticText>
@@ -438,10 +438,10 @@ Kerala, India. Ph: 7025077775, 9316002222]]></text>
 	<summary>
 		<band height="28" splitType="Stretch">
 			<line>
-				<reportElement x="0" y="0" width="555" height="1"/>
+				<reportElement x="0" y="0" width="555" height="1" uuid="98daf02e-e720-4304-b422-414a26fa1a9e"/>
 			</line>
 			<textField pattern="#,##0.00" isBlankWhenNull="false">
-				<reportElement mode="Transparent" x="202" y="3" width="43" height="18" forecolor="#000000" backcolor="#FFFFFF"/>
+				<reportElement mode="Transparent" x="202" y="3" width="43" height="18" forecolor="#000000" backcolor="#FFFFFF" uuid="44063e4b-aa7c-4b38-8929-f7c82ddc4a3a"/>
 				<textElement textAlignment="Right" verticalAlignment="Top" rotation="None" markup="none">
 					<font fontName="Arial Narrow" size="9" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 					<paragraph lineSpacing="Single"/>
@@ -449,7 +449,7 @@ Kerala, India. Ph: 7025077775, 9316002222]]></text>
 				<textFieldExpression><![CDATA[$V{total_gst_28}]]></textFieldExpression>
 			</textField>
 			<textField pattern="#,##0.00" isBlankWhenNull="false">
-				<reportElement mode="Transparent" x="283" y="3" width="45" height="18" forecolor="#000000" backcolor="#FFFFFF"/>
+				<reportElement mode="Transparent" x="295" y="3" width="45" height="18" forecolor="#000000" backcolor="#FFFFFF" uuid="36bc4538-4088-482b-8285-a4d8098d4ccd"/>
 				<textElement textAlignment="Right" verticalAlignment="Top" rotation="None" markup="none">
 					<font fontName="Arial Narrow" size="9" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 					<paragraph lineSpacing="Single"/>
@@ -457,7 +457,7 @@ Kerala, India. Ph: 7025077775, 9316002222]]></text>
 				<textFieldExpression><![CDATA[$V{total_sgst}]]></textFieldExpression>
 			</textField>
 			<textField pattern="#,##0.00" isBlankWhenNull="false">
-				<reportElement mode="Transparent" x="331" y="3" width="43" height="18" forecolor="#000000" backcolor="#FFFFFF"/>
+				<reportElement mode="Transparent" x="346" y="3" width="43" height="18" forecolor="#000000" backcolor="#FFFFFF" uuid="d553229c-059e-4f9c-8802-5487dd0d65be"/>
 				<textElement textAlignment="Right" verticalAlignment="Top" rotation="None" markup="none">
 					<font fontName="Arial Narrow" size="9" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 					<paragraph lineSpacing="Single"/>
@@ -465,7 +465,7 @@ Kerala, India. Ph: 7025077775, 9316002222]]></text>
 				<textFieldExpression><![CDATA[$V{total_cgst}]]></textFieldExpression>
 			</textField>
 			<textField pattern="#,##0.00" isBlankWhenNull="false">
-				<reportElement mode="Transparent" x="378" y="3" width="59" height="18" forecolor="#000000" backcolor="#FFFFFF"/>
+				<reportElement mode="Transparent" x="395" y="3" width="59" height="18" forecolor="#000000" backcolor="#FFFFFF" uuid="0486c87f-7c84-403d-b1b9-c706c632193b"/>
 				<textElement textAlignment="Right" verticalAlignment="Top" rotation="None" markup="none">
 					<font fontName="Arial Narrow" size="9" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 					<paragraph lineSpacing="Single"/>
@@ -473,7 +473,7 @@ Kerala, India. Ph: 7025077775, 9316002222]]></text>
 				<textFieldExpression><![CDATA[$V{gst_grand_total}]]></textFieldExpression>
 			</textField>
 			<textField pattern="#,##0.00" isBlankWhenNull="false">
-				<reportElement mode="Transparent" x="464" y="3" width="88" height="18" forecolor="#000000" backcolor="#FFFFFF"/>
+				<reportElement mode="Transparent" x="464" y="3" width="88" height="18" forecolor="#000000" backcolor="#FFFFFF" uuid="a836c566-9bf4-4ae2-934f-26d2982267cf"/>
 				<textElement textAlignment="Right" verticalAlignment="Top" rotation="None" markup="none">
 					<font fontName="Arial Narrow" size="9" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 					<paragraph lineSpacing="Single"/>
@@ -481,32 +481,33 @@ Kerala, India. Ph: 7025077775, 9316002222]]></text>
 				<textFieldExpression><![CDATA[$V{total_bill_amount}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="250" y="3" width="31" height="18"/>
-				<textElement textAlignment="Right">
-					<font fontName="Arial Narrow" size="9" isBold="true"/>
-				</textElement>
-				<text><![CDATA[0.0]]></text>
-			</staticText>
-			<staticText>
-				<reportElement x="3" y="3" width="48" height="18"/>
+				<reportElement x="3" y="3" width="48" height="18" uuid="1b975930-316b-42e7-9b10-bb1e2380a1a8"/>
 				<textElement>
 					<font fontName="Arial" size="9" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Count #:]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="41" y="3" width="23" height="18"/>
+				<reportElement x="41" y="3" width="23" height="18" uuid="39e2d347-f063-4b3d-9b89-b22e44db2d38"/>
 				<textElement>
 					<font fontName="Arial Narrow" size="9" isBold="true"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$V{REPORT_COUNT}]]></textFieldExpression>
 			</textField>
 			<textField pattern="#,##0.00">
-				<reportElement x="124" y="3" width="76" height="18"/>
+				<reportElement x="124" y="3" width="76" height="18" uuid="2a5fc93f-c264-48b8-8a99-c34c3d57faf7"/>
 				<textElement textAlignment="Right">
 					<font fontName="Arial Narrow" size="9" isBold="true"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$V{total_taxable_at_28}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.00" isBlankWhenNull="false">
+				<reportElement mode="Transparent" x="245" y="3" width="45" height="18" forecolor="#000000" backcolor="#FFFFFF" uuid="b5bab260-9c33-488a-9813-b69b41645896"/>
+				<textElement textAlignment="Right" verticalAlignment="Top" rotation="None" markup="none">
+					<font fontName="Arial Narrow" size="9" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[0.0]]></textFieldExpression>
 			</textField>
 		</band>
 	</summary>
