@@ -350,6 +350,11 @@ public class SalesWindow extends javax.swing.JFrame implements ActionListener{
 
         lblCustomerType.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         lblCustomerType.setText("Customer Type");
+        lblCustomerType.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblCustomerTypeMouseClicked(evt);
+            }
+        });
 
         cmbCustomerType.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1561,6 +1566,16 @@ public class SalesWindow extends javax.swing.JFrame implements ActionListener{
     private void chkIgstActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chkIgstActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_chkIgstActionPerformed
+
+    private void lblCustomerTypeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblCustomerTypeMouseClicked
+        // TODO add your handling code here:
+        if(evt.getClickCount() >= 2){
+            E_SalesWindow salesWindow = new E_SalesWindow();
+            salesWindow.setBounds(40, 40, 980, 680);
+            salesWindow.setVisible(true);
+        }
+
+    }//GEN-LAST:event_lblCustomerTypeMouseClicked
 
     /**
      * @param args the command line arguments

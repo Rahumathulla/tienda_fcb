@@ -2,7 +2,7 @@
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Customer Bill" language="groovy" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
 	<property name="ireport.zoom" value="1.3310000000000006"/>
 	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="368"/>
+	<property name="ireport.y" value="657"/>
 	<import value="java.util.Date"/>
 	<style name="Title" fontName="Arial" fontSize="26" isBold="true" pdfFontName="Helvetica-Bold"/>
 	<style name="SubTitle" forecolor="#666666" fontName="Arial" fontSize="18"/>
@@ -45,7 +45,7 @@
      sales.`discount` AS sales_discount,
      sales.`payable_amount` AS sales_payable_amount,
      sales.`total_gst` AS sales_total_gst,
-	 sales.`igst` AS sales_igst,
+     sales.`igst` AS sales_igst,
      sales.`sgst` AS sales_sgst,
      sales.`cgst` AS sales_cgst,
      sales.`gst_12` AS sales_gst_12,
@@ -148,112 +148,112 @@ WHERE
 					<reportElement x="-1" y="64" width="556" height="1" forecolor="#666666"/>
 				</line>
 				<staticText>
-					<reportElement style="Column header" x="7" y="52" width="37" height="13"/>
+					<reportElement style="Column header" x="7" y="42" width="37" height="13"/>
 					<textElement>
 						<font fontName="Arial Narrow" size="8"/>
 					</textElement>
 					<text><![CDATA[SGST]]></text>
 				</staticText>
 				<staticText>
-					<reportElement style="Column header" x="7" y="40" width="37" height="13"/>
+					<reportElement style="Column header" x="7" y="30" width="37" height="13"/>
 					<textElement>
 						<font fontName="Arial Narrow" size="8"/>
 					</textElement>
 					<text><![CDATA[CGST]]></text>
 				</staticText>
 				<staticText>
-					<reportElement style="Column header" x="7" y="27" width="37" height="14"/>
+					<reportElement style="Column header" x="7" y="17" width="37" height="14"/>
 					<textElement>
 						<font fontName="Arial Narrow" size="8"/>
 					</textElement>
 					<text><![CDATA[Sales]]></text>
 				</staticText>
 				<staticText>
-					<reportElement style="Column header" x="60" y="14" width="26" height="14"/>
+					<reportElement style="Column header" x="60" y="4" width="26" height="14"/>
 					<textElement textAlignment="Right">
 						<font fontName="Arial Narrow" size="8"/>
 					</textElement>
 					<text><![CDATA[0%]]></text>
 				</staticText>
 				<staticText>
-					<reportElement style="Column header" x="164" y="14" width="19" height="14"/>
+					<reportElement style="Column header" x="164" y="4" width="19" height="14"/>
 					<textElement textAlignment="Right">
 						<font fontName="Arial Narrow" size="8"/>
 					</textElement>
 					<text><![CDATA[12%]]></text>
 				</staticText>
 				<staticText>
-					<reportElement style="Column header" x="221" y="14" width="19" height="14"/>
+					<reportElement style="Column header" x="221" y="4" width="19" height="14"/>
 					<textElement textAlignment="Right">
 						<font fontName="Arial Narrow" size="8"/>
 					</textElement>
 					<text><![CDATA[18%]]></text>
 				</staticText>
 				<staticText>
-					<reportElement style="Column header" x="106" y="14" width="26" height="14"/>
+					<reportElement style="Column header" x="106" y="4" width="26" height="14"/>
 					<textElement textAlignment="Right">
 						<font fontName="Arial Narrow" size="8"/>
 					</textElement>
 					<text><![CDATA[5%]]></text>
 				</staticText>
 				<textField pattern="#,##0.00">
-					<reportElement style="Detail" x="148" y="40" width="35" height="11"/>
+					<reportElement style="Detail" x="148" y="30" width="35" height="11"/>
 					<textElement textAlignment="Right">
 						<font fontName="Arial Narrow" size="8"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$V{split_gst_12}]]></textFieldExpression>
 				</textField>
 				<textField pattern="#,##0.00">
-					<reportElement style="Detail" x="149" y="51" width="34" height="13"/>
+					<reportElement style="Detail" x="149" y="41" width="34" height="13"/>
 					<textElement textAlignment="Right">
 						<font fontName="Arial Narrow" size="8"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$V{split_gst_12}]]></textFieldExpression>
 				</textField>
 				<textField pattern="#,##0.00">
-					<reportElement style="Detail" x="202" y="39" width="38" height="12"/>
+					<reportElement style="Detail" x="202" y="29" width="38" height="12"/>
 					<textElement textAlignment="Right">
 						<font fontName="Arial Narrow" size="8"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$V{split_gst_18}]]></textFieldExpression>
 				</textField>
 				<textField pattern="#,##0.00">
-					<reportElement style="Detail" x="202" y="51" width="38" height="13"/>
+					<reportElement style="Detail" x="202" y="41" width="38" height="13"/>
 					<textElement textAlignment="Right">
 						<font fontName="Arial Narrow" size="8"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$V{split_gst_18}]]></textFieldExpression>
 				</textField>
 				<textField pattern="#,##0.00">
-					<reportElement style="Detail" x="97" y="40" width="35" height="12"/>
+					<reportElement style="Detail" x="97" y="30" width="35" height="12"/>
 					<textElement textAlignment="Right">
 						<font fontName="Arial Narrow" size="8"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$V{split_gst_5}]]></textFieldExpression>
 				</textField>
 				<textField pattern="#,##0.00">
-					<reportElement style="Detail" x="97" y="52" width="35" height="12"/>
+					<reportElement style="Detail" x="97" y="42" width="35" height="12"/>
 					<textElement textAlignment="Right">
 						<font fontName="Arial Narrow" size="8"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$V{split_gst_5}]]></textFieldExpression>
 				</textField>
 				<textField pattern="#,##0.00">
-					<reportElement x="149" y="27" width="34" height="16"/>
+					<reportElement x="149" y="17" width="34" height="16"/>
 					<textElement textAlignment="Right">
 						<font fontName="Arial Narrow" size="8"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{sales_taxable_at_12}]]></textFieldExpression>
 				</textField>
 				<textField pattern="#,##0.00">
-					<reportElement x="97" y="27" width="35" height="16"/>
+					<reportElement x="97" y="17" width="35" height="16"/>
 					<textElement textAlignment="Right">
 						<font fontName="Arial Narrow" size="8"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{sales_taxable_at_5}]]></textFieldExpression>
 				</textField>
 				<textField pattern="#,##0.00">
-					<reportElement x="202" y="27" width="38" height="16"/>
+					<reportElement x="202" y="17" width="38" height="16"/>
 					<textElement textAlignment="Right">
 						<font fontName="Arial Narrow" size="8"/>
 					</textElement>
@@ -274,7 +274,7 @@ WHERE
 					<text><![CDATA[.00]]></text>
 				</staticText>
 				<staticText>
-					<reportElement style="Column header" x="271" y="14" width="19" height="14"/>
+					<reportElement style="Column header" x="271" y="4" width="19" height="14"/>
 					<textElement textAlignment="Right">
 						<font fontName="Arial Narrow" size="8"/>
 					</textElement>
@@ -302,42 +302,42 @@ WHERE
 					<textFieldExpression><![CDATA[$F{sales_round_off}]]></textFieldExpression>
 				</textField>
 				<textField pattern="#,##0.00">
-					<reportElement x="50" y="27" width="35" height="15"/>
+					<reportElement x="50" y="17" width="35" height="15"/>
 					<textElement textAlignment="Right">
 						<font fontName="Arial Narrow" size="8"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{sales_taxable_at_0}]]></textFieldExpression>
 				</textField>
 				<textField pattern="#,##0.00">
-					<reportElement style="Detail" x="252" y="39" width="38" height="13"/>
+					<reportElement style="Detail" x="252" y="29" width="38" height="13"/>
 					<textElement textAlignment="Right">
 						<font fontName="Arial Narrow" size="8"/>
 					</textElement>
-					<textFieldExpression><![CDATA[$V{split_gst_28}]]></textFieldExpression>
+					<textFieldExpression><![CDATA[( java.lang.Double.valueOf($F{sales_igst}) > java.lang.Double.valueOf("0")?0.0:$V{split_gst_28} )]]></textFieldExpression>
 				</textField>
 				<textField pattern="#,##0.00">
-					<reportElement style="Detail" x="252" y="51" width="38" height="13"/>
+					<reportElement style="Detail" x="252" y="41" width="38" height="13"/>
 					<textElement textAlignment="Right">
 						<font fontName="Arial Narrow" size="8"/>
 					</textElement>
-					<textFieldExpression><![CDATA[$V{split_gst_28}]]></textFieldExpression>
+					<textFieldExpression><![CDATA[( java.lang.Double.valueOf($F{sales_igst}) > java.lang.Double.valueOf("0")?0.0:$V{split_gst_28} )]]></textFieldExpression>
 				</textField>
 				<textField pattern="#,##0.00">
-					<reportElement x="252" y="27" width="38" height="16"/>
+					<reportElement x="252" y="17" width="38" height="16"/>
 					<textElement textAlignment="Right">
 						<font fontName="Arial Narrow" size="8"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{sales_taxable_at_28}]]></textFieldExpression>
 				</textField>
 				<staticText>
-					<reportElement x="50" y="40" width="35" height="12"/>
+					<reportElement x="50" y="30" width="35" height="12"/>
 					<textElement textAlignment="Right">
 						<font size="8"/>
 					</textElement>
 					<text><![CDATA[-]]></text>
 				</staticText>
 				<staticText>
-					<reportElement x="50" y="52" width="35" height="12"/>
+					<reportElement x="50" y="42" width="35" height="12"/>
 					<textElement textAlignment="Right">
 						<font size="8"/>
 					</textElement>
@@ -371,6 +371,48 @@ WHERE
 					</textElement>
 					<textFieldExpression><![CDATA[$F{sales_cess}]]></textFieldExpression>
 				</textField>
+				<textField pattern="#,##0.00">
+					<reportElement style="Detail" x="252" y="54" width="38" height="13"/>
+					<textElement textAlignment="Right">
+						<font fontName="Arial Narrow" size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA[( java.lang.Double.valueOf($F{sales_igst}) > java.lang.Double.valueOf("0")?$F{sales_igst}:0.0 )]]></textFieldExpression>
+				</textField>
+				<textField pattern="#,##0.00">
+					<reportElement style="Detail" x="202" y="54" width="38" height="13"/>
+					<textElement textAlignment="Right">
+						<font fontName="Arial Narrow" size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$V{split_gst_18}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement style="Column header" x="7" y="54" width="37" height="13"/>
+					<textElement>
+						<font fontName="Arial Narrow" size="8"/>
+					</textElement>
+					<text><![CDATA[IGST]]></text>
+				</staticText>
+				<textField pattern="#,##0.00">
+					<reportElement style="Detail" x="97" y="54" width="35" height="12"/>
+					<textElement textAlignment="Right">
+						<font fontName="Arial Narrow" size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$V{split_gst_5}]]></textFieldExpression>
+				</textField>
+				<textField pattern="#,##0.00">
+					<reportElement style="Detail" x="149" y="54" width="34" height="13"/>
+					<textElement textAlignment="Right">
+						<font fontName="Arial Narrow" size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$V{split_gst_12}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="50" y="54" width="35" height="12"/>
+					<textElement textAlignment="Right">
+						<font size="8"/>
+					</textElement>
+					<text><![CDATA[-]]></text>
+				</staticText>
 			</band>
 			<band height="66">
 				<staticText>
@@ -434,7 +476,7 @@ WHERE
 					<textElement>
 						<font fontName="Arial Narrow" size="8" isBold="false" isUnderline="false"/>
 					</textElement>
-					<text><![CDATA[Account No: 0667073000000105    IFSC Code : SIBL0000667]]></text>
+					<text><![CDATA[Account No: 0667083000000018    IFSC Code : SIBL0000667]]></text>
 				</staticText>
 			</band>
 		</groupFooter>

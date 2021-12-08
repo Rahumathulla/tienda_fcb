@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Customer Bill" language="groovy" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
 	<property name="ireport.zoom" value="1.3310000000000006"/>
-	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="0"/>
+	<property name="ireport.x" value="70"/>
+	<property name="ireport.y" value="657"/>
 	<import value="java.util.Date"/>
 	<style name="Title" fontName="Arial" fontSize="26" isBold="true" pdfFontName="Helvetica-Bold"/>
 	<style name="SubTitle" forecolor="#666666" fontName="Arial" fontSize="18"/>
@@ -414,7 +414,7 @@ WHERE
 					<textElement>
 						<font fontName="Arial Narrow" size="8" isBold="false" isUnderline="false"/>
 					</textElement>
-					<text><![CDATA[Account No: 0667073000000105    IFSC Code : SIBL0000667]]></text>
+					<text><![CDATA[Account No: 0667083000000018    IFSC Code : SIBL0000667]]></text>
 				</staticText>
 			</band>
 		</groupFooter>
@@ -508,13 +508,6 @@ WHERE
 					</textElement>
 					<text><![CDATA[Amount in words: ]]></text>
 				</staticText>
-				<staticText>
-					<reportElement style="Column header" x="10" y="10" width="52" height="15"/>
-					<textElement textAlignment="Right" markup="none">
-						<font fontName="Arial Narrow" size="8" isItalic="true"/>
-					</textElement>
-					<text><![CDATA[K.F.Cess 1%]]></text>
-				</staticText>
 			</band>
 		</groupFooter>
 	</group>
@@ -551,7 +544,7 @@ Kerala, India. Ph: 7025077775, 9316002222]]></text>
 				<textElement textAlignment="Center">
 					<font fontName="SansSerif" size="12" isBold="true" isUnderline="true"/>
 				</textElement>
-				<text><![CDATA[TAX INVOICE-B2C]]></text>
+				<text><![CDATA[TAX INVOICE-B2B]]></text>
 			</staticText>
 			<staticText>
 				<reportElement style="Column header" x="439" y="79" width="43" height="12"/>

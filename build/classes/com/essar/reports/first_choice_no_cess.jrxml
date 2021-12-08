@@ -2,7 +2,7 @@
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Customer Bill" language="groovy" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
 	<property name="ireport.zoom" value="1.3310000000000006"/>
 	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="463"/>
+	<property name="ireport.y" value="607"/>
 	<import value="java.util.Date"/>
 	<style name="Title" fontName="Arial" fontSize="26" isBold="true" pdfFontName="Helvetica-Bold"/>
 	<style name="SubTitle" forecolor="#666666" fontName="Arial" fontSize="18"/>
@@ -362,8 +362,7 @@ WHERE
 				</staticText>
 				<textField pattern="#,##0.00">
 					<reportElement style="Detail" x="508" y="3" width="42" height="15">
-						<printWhenExpression><![CDATA[$F{sales_cess}>"0"
-]]></printWhenExpression>
+						<printWhenExpression><![CDATA[$F{sales_cess}>"0"]]></printWhenExpression>
 					</reportElement>
 					<textElement textAlignment="Right">
 						<font fontName="Arial Narrow" size="8"/>
@@ -433,7 +432,7 @@ WHERE
 					<textElement>
 						<font fontName="Arial Narrow" size="8" isBold="false" isUnderline="false"/>
 					</textElement>
-					<text><![CDATA[Account No: 0667073000000105    IFSC Code : SIBL0000667]]></text>
+					<text><![CDATA[Account No: 0667083000000018    IFSC Code : SIBL0000667]]></text>
 				</staticText>
 			</band>
 		</groupFooter>
