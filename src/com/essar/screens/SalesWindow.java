@@ -1570,6 +1570,7 @@ public class SalesWindow extends javax.swing.JFrame implements ActionListener{
     private void lblCustomerTypeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblCustomerTypeMouseClicked
         // TODO add your handling code here:
         if(evt.getClickCount() >= 2){
+            this.dispose();
             E_SalesWindow salesWindow = new E_SalesWindow();
             salesWindow.setBounds(40, 40, 980, 680);
             salesWindow.setVisible(true);
