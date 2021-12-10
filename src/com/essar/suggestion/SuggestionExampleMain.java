@@ -5,11 +5,8 @@
  */
 package com.essar.suggestion;
 import com.essar.dao.StockDAO;
-import com.essar.dao.VpStockDAO;
-import com.essar.utils.ConnectionManager;
 import javax.swing.*;
 import java.awt.*;
-import java.sql.Connection;
 import java.util.List;
 import java.util.stream.Collectors;
 /**
@@ -48,7 +45,7 @@ public class SuggestionExampleMain {
         //frame.setVisible(true);
     }
     
-    private static List<String> words = VpStockDAO.retrieveItemNames();
+    private static List<String> words = StockDAO.retrieveItemNames();
     
             //RandomUtil.getWords(2, 400).stream().map(String::toLowerCase).collect(Collectors.toList());
     

@@ -46,7 +46,7 @@ public class StockListingForSales_Vp {
         //frame.setVisible(true);
     }
     
-    private static List<String> words = StockDAO.retrieveItemNames();
+    private static List<String> words = VpStockDAO.retrieveItemNames();
     
             //RandomUtil.getWords(2, 400).stream().map(String::toLowerCase).collect(Collectors.toList());
     

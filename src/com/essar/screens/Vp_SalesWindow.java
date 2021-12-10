@@ -11,13 +11,13 @@ import com.essar.dao.VpSalesDAO;
 import com.essar.dao.VpStockDAO;
 import com.essar.pojos.Customer;
 import com.essar.pojos.PricingTier;
-import com.essar.suggestion.SuggestionExampleMain;
 import com.essar.utils.TableMouseListener;
 import com.essar.pojos.Sales;
 import com.essar.pojos.SalesDetails;
 import com.essar.pojos.SalesReturn;
 import com.essar.pojos.Stock;
 import com.essar.pojos.Supplier;
+import com.essar.suggestion.StockListingForSales_Vp;
 import com.essar.utils.ConnectionManager;
 import com.essar.utils.GenericUtils;
 import com.essar.utils.QueryStrings;
@@ -1130,7 +1130,7 @@ public class Vp_SalesWindow extends javax.swing.JFrame implements ActionListener
     private void btnAddMoreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddMoreActionPerformed
         // TODO add your handling code here:
         enableFormElements(true);
-        SuggestionExampleMain.populateItemNames(this, txtItemName);
+        StockListingForSales_Vp.populateItemNames(this, txtItemName);
         PricingTierDAO pricingTierDAO = new PricingTierDAO();
         renderDataIntoDropDown(pricingTierDAO.retrieveAll());
         txtItemName.requestFocus();
@@ -1289,7 +1289,7 @@ public class Vp_SalesWindow extends javax.swing.JFrame implements ActionListener
             //if(null==dtpSalesDate.getDate()){
                 dtpSalesDate.setDate(new Date());
             //}
-            SuggestionExampleMain.populateItemNames(this, txtItemName);
+            StockListingForSales_Vp.populateItemNames(this, txtItemName);
             //txtItemName.requestFocus();
             txtDisplayName.requestFocus();
             txtShippingAddress.setVisible(true);
@@ -2199,7 +2199,7 @@ public class Vp_SalesWindow extends javax.swing.JFrame implements ActionListener
             if(null==dtpSalesDate.getDate()){
                 dtpSalesDate.setDate(new Date());
             }
-            SuggestionExampleMain.populateItemNames(this, txtItemName);
+            StockListingForSales_Vp.populateItemNames(this, txtItemName);
             //txtItemName.requestFocus();
             txtDisplayName.requestFocus();
     }
@@ -2473,7 +2473,7 @@ public class Vp_SalesWindow extends javax.swing.JFrame implements ActionListener
                 
                 //txtQuantity.requestFocus();
                 enableFormElements(true);
-                SuggestionExampleMain.populateItemNames(this, txtItemName);
+                StockListingForSales_Vp.populateItemNames(this, txtItemName);
                 PricingTierDAO pricingTierDAO = new PricingTierDAO();
                 renderDataIntoDropDown(pricingTierDAO.retrieveAll());
                 txtItemName.requestFocus();
