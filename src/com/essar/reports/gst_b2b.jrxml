@@ -130,23 +130,13 @@
 		<band splitType="Stretch"/>
 	</background>
 	<title>
-		<band height="99" splitType="Stretch">
+		<band height="102" splitType="Stretch">
 			<staticText>
-				<reportElement x="191" y="4" width="242" height="23"/>
+				<reportElement x="191" y="0" width="242" height="23"/>
 				<textElement textAlignment="Center">
 					<font size="16" isBold="true"/>
 				</textElement>
 				<text><![CDATA[FIRST CHOICE BUILDMART]]></text>
-			</staticText>
-			<staticText>
-				<reportElement x="191" y="25" width="242" height="15"/>
-				<textElement textAlignment="Center"/>
-				<text><![CDATA[Thalavila Mukku (Kallambalam-Ponganadu Road)]]></text>
-			</staticText>
-			<staticText>
-				<reportElement x="191" y="40" width="242" height="14"/>
-				<textElement textAlignment="Center"/>
-				<text><![CDATA[TVPM, Kerala, India. Ph: 7025077775, 9316002222]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="1" y="4" width="140" height="21"/>
@@ -177,7 +167,7 @@
 				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="203" y="56" width="162" height="23"/>
+				<reportElement x="230" y="78" width="162" height="23"/>
 				<textElement textAlignment="Center" verticalAlignment="Bottom">
 					<font size="12" isBold="true" isUnderline="true"/>
 				</textElement>
@@ -187,6 +177,29 @@
 				<reportElement x="117" y="-1" width="104" height="65"/>
 				<imageExpression><![CDATA["D:\\Applications\\Tienda\\reports\\logo_grey.png"]]></imageExpression>
 			</image>
+			<staticText>
+				<reportElement x="181" y="18" width="262" height="12"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="10"/>
+				</textElement>
+				<text><![CDATA[HO: Thalavila Mukku, VKR Building 326/B]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="RelativeToBandHeight" x="181" y="47" width="262" height="55"/>
+				<textElement textAlignment="Center">
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[Br: Ambalam Mukku, Nasar Building 375-376 
+Nellanadu, Venjaramoodu Ring Road, Vamanapuram PO.
+Ph: 7025077775, 9316002222]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="181" y="29" width="262" height="26"/>
+				<textElement textAlignment="Center">
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[Kallambalam-Ponganadu Road, TVPM, Kerala, India.]]></text>
+			</staticText>
 		</band>
 	</title>
 	<pageHeader>

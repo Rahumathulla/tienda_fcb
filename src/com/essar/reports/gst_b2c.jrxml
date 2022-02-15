@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" >
 	<property name="ireport.zoom" value="1.3310000000000008"/>
 	<property name="ireport.x" value="0"/>
 	<property name="ireport.y" value="0"/>
@@ -130,165 +130,178 @@
 		<band splitType="Stretch"/>
 	</background>
 	<title>
-		<band height="89" splitType="Stretch">
+		<band height="106" splitType="Stretch">
 			<staticText>
-				<reportElement x="199" y="2" width="219" height="23"/>
+				<reportElement x="181" y="2" width="262" height="23" />
 				<textElement textAlignment="Center">
 					<font size="16" isBold="true"/>
 				</textElement>
 				<text><![CDATA[FIRST CHOICE BUILDMART]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="182" y="23" width="247" height="15"/>
-				<textElement textAlignment="Center"/>
-				<text><![CDATA[Thalavila Mukku (Kallambalam-Ponganadu Road)]]></text>
-			</staticText>
-			<staticText>
-				<reportElement x="182" y="38" width="247" height="14"/>
-				<textElement textAlignment="Center"/>
-				<text><![CDATA[TVPM, Kerala, India. Ph: 7025077775, 9316002222]]></text>
-			</staticText>
-			<staticText>
-				<reportElement x="1" y="4" width="140" height="21"/>
+				<reportElement x="1" y="4" width="140" height="21" />
 				<textElement>
 					<font fontName="Arial" size="9"/>
 				</textElement>
 				<text><![CDATA[GSTIN: 32AIUPJ0602M1Z9]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="1" y="22" width="100" height="15" forecolor="#333333"/>
+				<reportElement x="1" y="22" width="100" height="15" forecolor="#333333" />
 				<textElement>
 					<font fontName="Arial" size="9" isBold="true"/>
 				</textElement>
 				<text><![CDATA[State: Kerala]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="454" y="52" width="27" height="13"/>
+				<reportElement x="454" y="52" width="27" height="13" />
 				<textElement>
 					<font fontName="Arial" size="9" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Date: ]]></text>
 			</staticText>
 			<textField pattern="dd/MM/yyyy">
-				<reportElement x="481" y="52" width="71" height="13"/>
+				<reportElement x="481" y="52" width="71" height="13" />
 				<textElement textAlignment="Right">
 					<font fontName="Arial" size="9"/>
 				</textElement>
 				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="207" y="56" width="150" height="23"/>
+				<reportElement x="181" y="83" width="262" height="23" />
 				<textElement textAlignment="Center" verticalAlignment="Bottom">
 					<font size="12" isBold="true" isUnderline="true"/>
 				</textElement>
 				<text><![CDATA[SALES SUMMARY - (B2C)]]></text>
 			</staticText>
 			<image>
-				<reportElement x="129" y="-4" width="104" height="65"/>
+				<reportElement x="129" y="-4" width="104" height="65" />
 				<imageExpression><![CDATA["D:\\Applications\\Tienda\\reports\\logo_grey.png"]]></imageExpression>
 			</image>
+			<staticText>
+				<reportElement x="181" y="33" width="262" height="26" />
+				<textElement textAlignment="Center">
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[Kallambalam-Ponganadu Road, TVPM, Kerala, India.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="181" y="22" width="262" height="12" />
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="10"/>
+				</textElement>
+				<text><![CDATA[HO: Thalavila Mukku, VKR Building 326/B]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="RelativeToBandHeight" x="181" y="51" width="262" height="55" />
+				<textElement textAlignment="Center">
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[Br: Ambalam Mukku, Nasar Building 375-376 
+Nellanadu, Venjaramoodu Ring Road, Vamanapuram PO.
+Ph: 7025077775, 9316002222]]></text>
+			</staticText>
 		</band>
 	</title>
 	<pageHeader>
 		<band height="27" splitType="Stretch">
 			<staticText>
-				<reportElement x="3" y="10" width="48" height="12"/>
+				<reportElement x="3" y="10" width="48" height="12" />
 				<textElement>
 					<font fontName="Arial Narrow" size="8" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Bill Number]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="396" y="10" width="57" height="12"/>
+				<reportElement x="396" y="10" width="57" height="12" />
 				<textElement textAlignment="Center">
 					<font fontName="Arial Narrow" size="8" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Total GST Amt]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="73" y="10" width="48" height="12"/>
+				<reportElement x="73" y="10" width="48" height="12" />
 				<textElement>
 					<font fontName="Arial Narrow" size="8" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Bill Date]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="298" y="10" width="42" height="12"/>
+				<reportElement x="298" y="10" width="42" height="12" />
 				<textElement textAlignment="Center">
 					<font fontName="Arial Narrow" size="8" isBold="true"/>
 				</textElement>
 				<text><![CDATA[SGST Amt]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="204" y="10" width="42" height="12"/>
+				<reportElement x="204" y="10" width="42" height="12" />
 				<textElement textAlignment="Center">
 					<font fontName="Arial Narrow" size="8" isBold="true"/>
 				</textElement>
 				<text><![CDATA[GST at 28%]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="255" y="10" width="33" height="12"/>
+				<reportElement x="255" y="10" width="33" height="12" />
 				<textElement textAlignment="Center">
 					<font fontName="Arial Narrow" size="8" isBold="true"/>
 				</textElement>
 				<text><![CDATA[IGST Amt]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="464" y="10" width="87" height="12"/>
+				<reportElement x="464" y="10" width="87" height="12" />
 				<textElement textAlignment="Center">
 					<font fontName="Arial Narrow" size="8" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Total Bill Amt]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="347" y="10" width="44" height="12"/>
+				<reportElement x="347" y="10" width="44" height="12" />
 				<textElement textAlignment="Center">
 					<font fontName="Arial Narrow" size="8" isBold="true"/>
 				</textElement>
 				<text><![CDATA[CGST Amt]]></text>
 			</staticText>
 			<line>
-				<reportElement x="0" y="8" width="555" height="1"/>
+				<reportElement x="0" y="8" width="555" height="1" />
 			</line>
 			<line>
-				<reportElement x="0" y="25" width="555" height="1"/>
+				<reportElement x="0" y="25" width="555" height="1" />
 			</line>
 			<line>
-				<reportElement x="0" y="9" width="1" height="16"/>
+				<reportElement x="0" y="9" width="1" height="16" />
 			</line>
 			<line>
-				<reportElement x="68" y="9" width="1" height="16"/>
+				<reportElement x="68" y="9" width="1" height="16" />
 			</line>
 			<line>
-				<reportElement x="123" y="9" width="1" height="16"/>
+				<reportElement x="123" y="9" width="1" height="16" />
 			</line>
 			<line>
-				<reportElement x="251" y="9" width="1" height="16"/>
+				<reportElement x="251" y="9" width="1" height="16" />
 			</line>
 			<line>
-				<reportElement x="293" y="9" width="1" height="16"/>
+				<reportElement x="293" y="9" width="1" height="16" />
 			</line>
 			<line>
-				<reportElement x="343" y="9" width="1" height="16"/>
+				<reportElement x="343" y="9" width="1" height="16" />
 			</line>
 			<line>
-				<reportElement x="394" y="9" width="1" height="16"/>
+				<reportElement x="394" y="9" width="1" height="16" />
 			</line>
 			<line>
-				<reportElement x="458" y="9" width="1" height="16"/>
+				<reportElement x="458" y="9" width="1" height="16" />
 			</line>
 			<line>
-				<reportElement x="554" y="9" width="1" height="16"/>
+				<reportElement x="554" y="9" width="1" height="16" />
 			</line>
 			<staticText>
-				<reportElement x="125" y="10" width="75" height="12"/>
+				<reportElement x="125" y="10" width="75" height="12" />
 				<textElement textAlignment="Center">
 					<font fontName="Arial Narrow" size="8" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Taxable Amt at 28%]]></text>
 			</staticText>
 			<line>
-				<reportElement x="203" y="9" width="1" height="16"/>
+				<reportElement x="203" y="9" width="1" height="16" />
 			</line>
 		</band>
 	</pageHeader>
@@ -298,28 +311,28 @@
 	<detail>
 		<band height="15" splitType="Stretch">
 			<textField>
-				<reportElement x="4" y="0" width="43" height="15"/>
+				<reportElement x="4" y="0" width="43" height="15" />
 				<textElement>
 					<font fontName="Arial Narrow" size="9"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{bill_number}]]></textFieldExpression>
 			</textField>
 			<textField pattern="dd/MM/yyyy">
-				<reportElement x="74" y="0" width="48" height="15"/>
+				<reportElement x="74" y="0" width="48" height="15" />
 				<textElement>
 					<font fontName="Arial Narrow" size="9"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{sales_date}]]></textFieldExpression>
 			</textField>
 			<textField pattern="#,##0.00">
-				<reportElement x="464" y="0" width="88" height="15"/>
+				<reportElement x="464" y="0" width="88" height="15" />
 				<textElement textAlignment="Right">
 					<font fontName="Arial Narrow" size="9"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{bill_amount}]]></textFieldExpression>
 			</textField>
 			<textField pattern="#,##0.00" isBlankWhenNull="false">
-				<reportElement mode="Transparent" x="204" y="0" width="42" height="15" forecolor="#000000" backcolor="#FFFFFF"/>
+				<reportElement mode="Transparent" x="204" y="0" width="42" height="15" forecolor="#000000" backcolor="#FFFFFF" />
 				<textElement textAlignment="Right" verticalAlignment="Top" rotation="None" markup="none">
 					<font fontName="Arial Narrow" size="9" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 					<paragraph lineSpacing="Single"/>
@@ -327,7 +340,7 @@
 				<textFieldExpression><![CDATA[$F{gst_28}]]></textFieldExpression>
 			</textField>
 			<textField pattern="#,##0.00" isBlankWhenNull="false">
-				<reportElement mode="Transparent" x="298" y="0" width="42" height="15" forecolor="#000000" backcolor="#FFFFFF"/>
+				<reportElement mode="Transparent" x="298" y="0" width="42" height="15" forecolor="#000000" backcolor="#FFFFFF" />
 				<textElement textAlignment="Right" verticalAlignment="Top" rotation="None" markup="none">
 					<font fontName="Arial Narrow" size="9" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 					<paragraph lineSpacing="Single"/>
@@ -335,7 +348,7 @@
 				<textFieldExpression><![CDATA[$F{sgst}]]></textFieldExpression>
 			</textField>
 			<textField pattern="#,##0.00" isBlankWhenNull="false">
-				<reportElement mode="Transparent" x="347" y="0" width="43" height="15" forecolor="#000000" backcolor="#FFFFFF"/>
+				<reportElement mode="Transparent" x="347" y="0" width="43" height="15" forecolor="#000000" backcolor="#FFFFFF" />
 				<textElement textAlignment="Right" verticalAlignment="Top" rotation="None" markup="none">
 					<font fontName="Arial Narrow" size="9" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 					<paragraph lineSpacing="Single"/>
@@ -343,7 +356,7 @@
 				<textFieldExpression><![CDATA[$F{cgst}]]></textFieldExpression>
 			</textField>
 			<textField pattern="#,##0.00" isBlankWhenNull="false">
-				<reportElement mode="Transparent" x="394" y="0" width="58" height="15" forecolor="#000000" backcolor="#FFFFFF"/>
+				<reportElement mode="Transparent" x="394" y="0" width="58" height="15" forecolor="#000000" backcolor="#FFFFFF" />
 				<textElement textAlignment="Right" verticalAlignment="Top" rotation="None" markup="none">
 					<font fontName="Arial Narrow" size="9" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 					<paragraph lineSpacing="Single"/>
@@ -351,7 +364,7 @@
 				<textFieldExpression><![CDATA[$F{total_gst}]]></textFieldExpression>
 			</textField>
 			<textField pattern="#,##0.00" isBlankWhenNull="false">
-				<reportElement mode="Transparent" x="257" y="0" width="31" height="15" forecolor="#000000" backcolor="#FFFFFF"/>
+				<reportElement mode="Transparent" x="257" y="0" width="31" height="15" forecolor="#000000" backcolor="#FFFFFF" />
 				<textElement textAlignment="Right" verticalAlignment="Top" rotation="None" markup="none">
 					<font fontName="Arial Narrow" size="9" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 					<paragraph lineSpacing="Single"/>
@@ -359,37 +372,37 @@
 				<textFieldExpression><![CDATA[$F{igst}]]></textFieldExpression>
 			</textField>
 			<line>
-				<reportElement x="68" y="-1" width="1" height="16"/>
+				<reportElement x="68" y="-1" width="1" height="16" />
 			</line>
 			<line>
-				<reportElement x="0" y="-1" width="1" height="16"/>
+				<reportElement x="0" y="-1" width="1" height="16" />
 			</line>
 			<line>
-				<reportElement x="123" y="-1" width="1" height="16"/>
+				<reportElement x="123" y="-1" width="1" height="16" />
 			</line>
 			<line>
-				<reportElement x="203" y="-1" width="1" height="16"/>
+				<reportElement x="203" y="-1" width="1" height="16" />
 			</line>
 			<line>
-				<reportElement x="251" y="-1" width="1" height="16"/>
+				<reportElement x="251" y="-1" width="1" height="16" />
 			</line>
 			<line>
-				<reportElement x="293" y="-1" width="1" height="16"/>
+				<reportElement x="293" y="-1" width="1" height="16" />
 			</line>
 			<line>
-				<reportElement x="343" y="-1" width="1" height="16"/>
+				<reportElement x="343" y="-1" width="1" height="16" />
 			</line>
 			<line>
-				<reportElement x="394" y="-1" width="1" height="16"/>
+				<reportElement x="394" y="-1" width="1" height="16" />
 			</line>
 			<line>
-				<reportElement x="458" y="-1" width="1" height="16"/>
+				<reportElement x="458" y="-1" width="1" height="16" />
 			</line>
 			<line>
-				<reportElement x="554" y="-1" width="1" height="16"/>
+				<reportElement x="554" y="-1" width="1" height="16" />
 			</line>
 			<textField pattern="#,##0.00">
-				<reportElement x="125" y="0" width="75" height="15"/>
+				<reportElement x="125" y="0" width="75" height="15" />
 				<textElement textAlignment="Right">
 					<font fontName="Arial Narrow" size="9"/>
 				</textElement>
@@ -403,42 +416,42 @@
 	<pageFooter>
 		<band height="54" splitType="Stretch">
 			<line>
-				<reportElement x="0" y="-2" width="555" height="1"/>
+				<reportElement x="0" y="-2" width="555" height="1" />
 			</line>
 			<textField>
-				<reportElement x="0" y="34" width="44" height="20"/>
+				<reportElement x="0" y="34" width="44" height="20" />
 				<textElement textAlignment="Right">
 					<font fontName="Arial" size="8"/>
 				</textElement>
 				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
 			</textField>
 			<textField evaluationTime="Report">
-				<reportElement x="610" y="34" width="40" height="20"/>
+				<reportElement x="610" y="34" width="40" height="20" />
 				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
 			</textField>
 			<textField evaluationTime="Report">
-				<reportElement x="41" y="33" width="16" height="19"/>
+				<reportElement x="41" y="33" width="16" height="19" />
 				<textElement textAlignment="Right">
 					<font fontName="Arial" size="8"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="425" y="2" width="19" height="20"/>
+				<reportElement x="425" y="2" width="19" height="20" />
 				<textElement textAlignment="Right">
 					<font fontName="Monotype Corsiva"/>
 				</textElement>
 				<text><![CDATA[for]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="443" y="2" width="110" height="20"/>
+				<reportElement x="443" y="2" width="110" height="20" />
 				<textElement textAlignment="Right">
 					<font isBold="true"/>
 				</textElement>
 				<text><![CDATA[First Choice BuildMart]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="452" y="34" width="100" height="20"/>
+				<reportElement x="452" y="34" width="100" height="20" />
 				<textElement textAlignment="Right" verticalAlignment="Bottom"/>
 				<text><![CDATA[Authorized Signatory]]></text>
 			</staticText>
@@ -447,10 +460,10 @@
 	<summary>
 		<band height="28" splitType="Stretch">
 			<line>
-				<reportElement x="0" y="0" width="555" height="1"/>
+				<reportElement x="0" y="0" width="555" height="1" />
 			</line>
 			<textField pattern="#,##0.00" isBlankWhenNull="false">
-				<reportElement mode="Transparent" x="202" y="3" width="43" height="18" forecolor="#000000" backcolor="#FFFFFF"/>
+				<reportElement mode="Transparent" x="202" y="3" width="43" height="18" forecolor="#000000" backcolor="#FFFFFF" />
 				<textElement textAlignment="Right" verticalAlignment="Top" rotation="None" markup="none">
 					<font fontName="Arial Narrow" size="9" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 					<paragraph lineSpacing="Single"/>
@@ -458,7 +471,7 @@
 				<textFieldExpression><![CDATA[$V{total_gst_28}]]></textFieldExpression>
 			</textField>
 			<textField pattern="#,##0.00" isBlankWhenNull="false">
-				<reportElement mode="Transparent" x="294" y="3" width="45" height="18" forecolor="#000000" backcolor="#FFFFFF"/>
+				<reportElement mode="Transparent" x="294" y="3" width="45" height="18" forecolor="#000000" backcolor="#FFFFFF" />
 				<textElement textAlignment="Right" verticalAlignment="Top" rotation="None" markup="none">
 					<font fontName="Arial Narrow" size="9" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 					<paragraph lineSpacing="Single"/>
@@ -466,7 +479,7 @@
 				<textFieldExpression><![CDATA[$V{total_sgst}]]></textFieldExpression>
 			</textField>
 			<textField pattern="#,##0.00" isBlankWhenNull="false">
-				<reportElement mode="Transparent" x="346" y="3" width="43" height="18" forecolor="#000000" backcolor="#FFFFFF"/>
+				<reportElement mode="Transparent" x="346" y="3" width="43" height="18" forecolor="#000000" backcolor="#FFFFFF" />
 				<textElement textAlignment="Right" verticalAlignment="Top" rotation="None" markup="none">
 					<font fontName="Arial Narrow" size="9" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 					<paragraph lineSpacing="Single"/>
@@ -474,7 +487,7 @@
 				<textFieldExpression><![CDATA[$V{total_cgst}]]></textFieldExpression>
 			</textField>
 			<textField pattern="#,##0.00" isBlankWhenNull="false">
-				<reportElement mode="Transparent" x="395" y="3" width="59" height="18" forecolor="#000000" backcolor="#FFFFFF"/>
+				<reportElement mode="Transparent" x="395" y="3" width="59" height="18" forecolor="#000000" backcolor="#FFFFFF" />
 				<textElement textAlignment="Right" verticalAlignment="Top" rotation="None" markup="none">
 					<font fontName="Arial Narrow" size="9" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 					<paragraph lineSpacing="Single"/>
@@ -482,7 +495,7 @@
 				<textFieldExpression><![CDATA[$V{gst_grand_total}]]></textFieldExpression>
 			</textField>
 			<textField pattern="#,##0.00" isBlankWhenNull="false">
-				<reportElement mode="Transparent" x="464" y="3" width="88" height="18" forecolor="#000000" backcolor="#FFFFFF"/>
+				<reportElement mode="Transparent" x="464" y="3" width="88" height="18" forecolor="#000000" backcolor="#FFFFFF" />
 				<textElement textAlignment="Right" verticalAlignment="Top" rotation="None" markup="none">
 					<font fontName="Arial Narrow" size="9" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 					<paragraph lineSpacing="Single"/>
@@ -490,28 +503,28 @@
 				<textFieldExpression><![CDATA[$V{total_bill_amount}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="3" y="3" width="48" height="18"/>
+				<reportElement x="3" y="3" width="48" height="18" />
 				<textElement>
 					<font fontName="Arial" size="9" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Count #:]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="41" y="3" width="23" height="18"/>
+				<reportElement x="41" y="3" width="23" height="18" />
 				<textElement>
 					<font fontName="Arial Narrow" size="9" isBold="true"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$V{REPORT_COUNT}]]></textFieldExpression>
 			</textField>
 			<textField pattern="#,##0.00">
-				<reportElement x="124" y="3" width="76" height="18"/>
+				<reportElement x="124" y="3" width="76" height="18" />
 				<textElement textAlignment="Right">
 					<font fontName="Arial Narrow" size="9" isBold="true"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$V{total_taxable_at_28}]]></textFieldExpression>
 			</textField>
 			<textField pattern="#,##0.00" isBlankWhenNull="false">
-				<reportElement mode="Transparent" x="246" y="3" width="45" height="18" forecolor="#000000" backcolor="#FFFFFF"/>
+				<reportElement mode="Transparent" x="246" y="3" width="45" height="18" forecolor="#000000" backcolor="#FFFFFF" />
 				<textElement textAlignment="Right" verticalAlignment="Top" rotation="None" markup="none">
 					<font fontName="Arial Narrow" size="9" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 					<paragraph lineSpacing="Single"/>

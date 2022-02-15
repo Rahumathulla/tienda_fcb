@@ -408,7 +408,7 @@ public class EstimateDAO {
                 detailStatement.executeUpdate();                
                 
             }
-            updateStockAfterSales(sales,salesDetailsList, trackActivity);
+            //updateStockAfterSales(sales,salesDetailsList, trackActivity);
             con.close();            
         } catch (SQLException ex) {
             Logger.getLogger(ProductCategory.class.getName()).log(Level.SEVERE, null, ex);
@@ -446,7 +446,7 @@ public class EstimateDAO {
                 detailStatement.executeUpdate();                
                 
             }
-            updateStockAfterSales(sales,salesDetailsList,trackActivity);
+            //updateStockAfterSales(sales,salesDetailsList,trackActivity);
             con.close();            
         } catch (SQLException ex) {
             Logger.getLogger(ProductCategory.class.getName()).log(Level.SEVERE, null, ex);
@@ -537,7 +537,7 @@ public class EstimateDAO {
                 detailStatement.executeUpdate();                
                 
             }
-            updateStockAfterSales(sales,salesDetailsList, trackActivity);
+            //updateStockAfterSales(sales,salesDetailsList, trackActivity);
                         
             SalesReturn salesReturn = new SalesReturn();
             //List<SalesDetails> salesDetailsList = sales.getSalesDetails();
@@ -552,7 +552,7 @@ public class EstimateDAO {
                 deleteStatement.executeUpdate();                
                 
             }
-            updateStockAfterSalesReturn(sales, returnList, trackActivity);
+            //updateStockAfterSalesReturn(sales, returnList, trackActivity);
             con.close();            
         } catch (SQLException ex) {
             Logger.getLogger(ProductCategory.class.getName()).log(Level.SEVERE, null, ex);

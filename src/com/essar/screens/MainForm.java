@@ -27,6 +27,7 @@ public class MainForm extends javax.swing.JFrame {
         initComponents();
         this.setTitle("Tienda 2.1");
         this.setExtendedState(6);
+        jPanel2.setVisible(false);
         //lblPoweredBy.setAlignmentX(20);
         //lblPoweredBy.setAlignmentY(200);
         lblPoweredBy.setBounds(800,800, 300, 100);
@@ -71,6 +72,7 @@ public class MainForm extends javax.swing.JFrame {
         jSeparator1 = new javax.swing.JPopupMenu.Separator();
         mitSalesReturn = new javax.swing.JMenuItem();
         mitPurchaseReturn = new javax.swing.JMenuItem();
+        mitStockTransfer = new javax.swing.JMenuItem();
         mitExit = new javax.swing.JMenuItem();
         mnuInsights = new javax.swing.JMenu();
         mitActivityLog = new javax.swing.JMenuItem();
@@ -201,17 +203,17 @@ public class MainForm extends javax.swing.JFrame {
         cmdReports.setBounds(100, 270, 180, 50);
 
         jPanel1.setBackground(java.awt.SystemColor.activeCaption);
-        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("HO"));
+        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 468, Short.MAX_VALUE)
+            .addGap(0, 476, Short.MAX_VALUE)
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 267, Short.MAX_VALUE)
+            .addGap(0, 285, Short.MAX_VALUE)
         );
 
         desktopPane.add(jPanel1);
@@ -345,6 +347,16 @@ public class MainForm extends javax.swing.JFrame {
             }
         });
         mnuOperations.add(mitPurchaseReturn);
+
+        mitStockTransfer.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/reports1.png"))); // NOI18N
+        mitStockTransfer.setMnemonic('T');
+        mitStockTransfer.setText("Stock Transfer");
+        mitStockTransfer.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mitStockTransferActionPerformed(evt);
+            }
+        });
+        mnuOperations.add(mitStockTransfer);
 
         mitExit.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_Q, java.awt.event.InputEvent.CTRL_MASK));
         mitExit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/logout.png"))); // NOI18N
@@ -801,6 +813,13 @@ public class MainForm extends javax.swing.JFrame {
         
     }//GEN-LAST:event_cmdReportsVpActionPerformed
 
+    private void mitStockTransferActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mitStockTransferActionPerformed
+        // TODO add your handling code here:
+        StockTransfer stockTransfer =  new StockTransfer();
+        stockTransfer.setBounds(60, 60, 960,660);
+        stockTransfer.setVisible(true);
+    }//GEN-LAST:event_mitStockTransferActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -881,6 +900,7 @@ public class MainForm extends javax.swing.JFrame {
     private javax.swing.JMenuItem mitSalesReturn;
     private javax.swing.JMenuItem mitStockAudit;
     private javax.swing.JMenuItem mitStockEntry;
+    private javax.swing.JMenuItem mitStockTransfer;
     private javax.swing.JMenuItem mitSuppliers;
     private javax.swing.JMenuItem mitUsers;
     private javax.swing.JMenu mnuBookKeeping;

@@ -42,6 +42,8 @@
      sales.`round_off` AS sales_round_off,
      sales.`bill_amount` AS sales_bill_amount,
      sales.`sales_date` AS sales_date,
+     sales.`shipped_from` AS sales_shipped_from,
+     sales.`delivery_date` AS sales_delivery_date,
      sales.`discount` AS sales_discount,
      sales.`payable_amount` AS sales_payable_amount,
      sales.`total_gst` AS sales_total_gst,
@@ -78,6 +80,8 @@ WHERE
 	<field name="sales_round_off" class="java.lang.Double"/>
 	<field name="sales_bill_amount" class="java.lang.Double"/>
 	<field name="sales_date" class="java.util.Date"/>
+	<field name="sales_delivery_date" class="java.util.Date"/>
+	<field name="sales_shipped_from" class="java.lang.String"/>
 	<field name="sales_discount" class="java.lang.Double"/>
 	<field name="sales_payable_amount" class="java.lang.Double"/>
 	<field name="sales_total_gst" class="java.lang.Double"/>
@@ -353,6 +357,24 @@ WHERE
 					</textElement>
 					<text><![CDATA[GST Details: ]]></text>
 				</staticText>
+				<staticText>
+					<reportElement style="Column header" x="452" y="3" width="52" height="15">
+						<printWhenExpression><![CDATA[java.lang.Double.valueOf($F{sales_cess}) > java.lang.Double.valueOf("0")]]></printWhenExpression>
+					</reportElement>
+					<textElement textAlignment="Right" markup="none">
+						<font fontName="Arial Narrow" size="8" isItalic="true"/>
+					</textElement>
+					<text><![CDATA[K.F.Cess 1%]]></text>
+				</staticText>
+				<textField pattern="#,##0.00">
+					<reportElement style="Detail" x="508" y="3" width="42" height="15">
+						<printWhenExpression><![CDATA[java.lang.Double.valueOf($F{sales_cess}) > java.lang.Double.valueOf("0")]]></printWhenExpression>
+					</reportElement>
+					<textElement textAlignment="Right">
+						<font fontName="Arial Narrow" size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{sales_cess}]]></textFieldExpression>
+				</textField>
 				<textField pattern="#,##0.00">
 					<reportElement style="Detail" x="252" y="54" width="38" height="13"/>
 					<textElement textAlignment="Right">
@@ -518,7 +540,7 @@ WHERE
 			</band>
 			<band height="31">
 				<textField pattern="#,##0.00">
-					<reportElement style="Detail" x="413" y="2" width="34" height="14"/>
+					<reportElement style="Detail" x="411" y="1" width="37" height="14"/>
 					<textElement textAlignment="Right" verticalAlignment="Top">
 						<font fontName="Arial Narrow" size="8" isBold="true"/>
 					</textElement>
@@ -532,7 +554,7 @@ WHERE
 					<textFieldExpression><![CDATA[$V{total_net}]]></textFieldExpression>
 				</textField>
 				<textField pattern="#,##0.00" isBlankWhenNull="false">
-					<reportElement style="Detail" mode="Transparent" x="453" y="2" width="46" height="15" forecolor="#000000" backcolor="#FFFFFF"/>
+					<reportElement style="Detail" mode="Transparent" x="453" y="1" width="49" height="15" forecolor="#000000" backcolor="#FFFFFF"/>
 					<textElement textAlignment="Right" verticalAlignment="Top" rotation="None" markup="none">
 						<font fontName="Arial Narrow" size="8" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 						<paragraph lineSpacing="Single"/>
@@ -568,72 +590,58 @@ WHERE
 		<band splitType="Stretch"/>
 	</background>
 	<title>
-		<band height="159" splitType="Stretch">
+		<band height="196" splitType="Stretch">
 			<staticText>
-				<reportElement x="191" y="38" width="236" height="14"/>
-				<textElement textAlignment="Center">
-					<font size="10"/>
-				</textElement>
-				<text><![CDATA[TVPM, Kerala, India. Ph: 7025077775, 9316002222]]></text>
-			</staticText>
-			<staticText>
-				<reportElement x="191" y="26" width="236" height="12"/>
-				<textElement textAlignment="Center">
-					<font fontName="Arial" size="10"/>
-				</textElement>
-				<text><![CDATA[Thalavila Mukku (Kallambalam-Ponganadu Road)]]></text>
-			</staticText>
-			<staticText>
-				<reportElement x="2" y="62" width="139" height="20"/>
+				<reportElement x="2" y="100" width="139" height="20"/>
 				<textElement>
 					<font fontName="Arial" size="9"/>
 				</textElement>
 				<text><![CDATA[GSTIN: 32AIUPJ0602M1Z9]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="190" y="3" width="236" height="22"/>
+				<reportElement x="172" y="3" width="262" height="22"/>
 				<textElement textAlignment="Center">
 					<font fontName="SansSerif" size="16" isBold="true"/>
 				</textElement>
 				<text><![CDATA[FIRST CHOICE BUILDMART]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="195" y="61" width="231" height="18"/>
+				<reportElement x="222" y="99" width="159" height="18"/>
 				<textElement textAlignment="Center">
 					<font fontName="SansSerif" size="12" isBold="true" isUnderline="true"/>
 				</textElement>
 				<text><![CDATA[TAX INVOICE-B2B]]></text>
 			</staticText>
 			<staticText>
-				<reportElement style="Column header" x="439" y="79" width="43" height="12"/>
+				<reportElement style="Column header" x="439" y="117" width="43" height="12"/>
 				<textElement textAlignment="Right">
 					<font size="9"/>
 				</textElement>
 				<text><![CDATA[Bill No :]]></text>
 			</staticText>
 			<staticText>
-				<reportElement style="Column header" x="412" y="64" width="70" height="15"/>
+				<reportElement style="Column header" x="412" y="102" width="70" height="15"/>
 				<textElement textAlignment="Right">
 					<font size="9"/>
 				</textElement>
 				<text><![CDATA[Invoice Date :]]></text>
 			</staticText>
 			<textField pattern="dd/MM/yyyy">
-				<reportElement x="483" y="64" width="69" height="15"/>
+				<reportElement x="483" y="102" width="69" height="15"/>
 				<textElement textAlignment="Right">
 					<font fontName="Arial Narrow" size="9" isBold="true"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{sales_date}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement style="Column header" x="3" y="96" width="89" height="15"/>
+				<reportElement style="Column header" x="3" y="134" width="89" height="15"/>
 				<textElement>
 					<font size="9" isBold="false"/>
 				</textElement>
 				<text><![CDATA[Billing Address:]]></text>
 			</staticText>
 			<textField pattern="dd/MM/yyyy" isBlankWhenNull="true">
-				<reportElement style="SubTitle" mode="Transparent" x="3" y="109" width="150" height="48" forecolor="#666666" backcolor="#FFFFFF"/>
+				<reportElement style="SubTitle" mode="Transparent" x="3" y="147" width="150" height="48" forecolor="#666666" backcolor="#FFFFFF"/>
 				<textElement textAlignment="Left" verticalAlignment="Top" rotation="None" markup="none">
 					<font fontName="Arial" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 					<paragraph lineSpacing="1_1_2"/>
@@ -641,7 +649,7 @@ WHERE
 				<textFieldExpression><![CDATA[$F{sales_customer_name}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement style="Column header" x="3" y="76" width="60" height="15"/>
+				<reportElement style="Column header" x="3" y="114" width="60" height="15"/>
 				<textElement>
 					<font size="9"/>
 				</textElement>
@@ -655,7 +663,7 @@ WHERE
 				<text><![CDATA[Original for Recipient]]></text>
 			</staticText>
 			<textField pattern="###0" isBlankWhenNull="false">
-				<reportElement style="SubTitle" mode="Transparent" x="483" y="79" width="70" height="15" forecolor="#006600" backcolor="#FFFFFF"/>
+				<reportElement style="SubTitle" mode="Transparent" x="483" y="117" width="70" height="15" forecolor="#006600" backcolor="#FFFFFF"/>
 				<textElement textAlignment="Right" verticalAlignment="Top" rotation="None" markup="none">
 					<font fontName="Arial" size="9" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 					<paragraph lineSpacing="Single"/>
@@ -679,30 +687,30 @@ WHERE
 				<text><![CDATA[Triplicate for Supplier]]></text>
 			</staticText>
 			<line>
-				<reportElement x="-1" y="61" width="556" height="1"/>
+				<reportElement x="-1" y="98" width="556" height="1"/>
 				<graphicElement>
 					<pen lineWidth="1.0" lineStyle="Dotted" lineColor="#666666"/>
 				</graphicElement>
 			</line>
 			<line>
-				<reportElement x="-1" y="95" width="556" height="1"/>
+				<reportElement x="-1" y="134" width="556" height="1"/>
 				<graphicElement>
 					<pen lineWidth="1.0" lineStyle="Dotted" lineColor="#666666"/>
 				</graphicElement>
 			</line>
 			<staticText>
-				<reportElement style="Column header" x="272" y="81" width="70" height="15"/>
+				<reportElement style="Column header" x="267" y="119" width="70" height="15"/>
 				<textElement textAlignment="Center">
 					<font size="9"/>
 				</textElement>
 				<text><![CDATA[CASH BILL]]></text>
 			</staticText>
 			<image>
-				<reportElement x="126" y="-3" width="85" height="64"/>
+				<reportElement x="111" y="-3" width="85" height="64"/>
 				<imageExpression><![CDATA["D:\\Applications\\Tienda\\reports\\logo_grey.png"]]></imageExpression>
 			</image>
 			<textField pattern="dd/MM/yyyy" isBlankWhenNull="true">
-				<reportElement style="SubTitle" mode="Transparent" x="483" y="102" width="70" height="15" forecolor="#666666" backcolor="#FFFFFF"/>
+				<reportElement style="SubTitle" mode="Transparent" x="483" y="178" width="70" height="15" forecolor="#666666" backcolor="#FFFFFF"/>
 				<textElement textAlignment="Right" verticalAlignment="Top" rotation="None" markup="none">
 					<font fontName="Arial" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 					<paragraph lineSpacing="1_1_2"/>
@@ -710,26 +718,79 @@ WHERE
 				<textFieldExpression><![CDATA[$F{sales_vehicle_details}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement style="Column header" x="392" y="102" width="89" height="13"/>
+				<reportElement style="Column header" x="357" y="178" width="89" height="13"/>
 				<textElement textAlignment="Right">
 					<font size="9" isBold="false"/>
 				</textElement>
 				<text><![CDATA[Vehicle Details :]]></text>
 			</staticText>
 			<staticText>
-				<reportElement style="Column header" x="190" y="97" width="136" height="14"/>
+				<reportElement style="Column header" x="164" y="135" width="136" height="14"/>
 				<textElement>
 					<font size="9" isBold="false"/>
 				</textElement>
 				<text><![CDATA[Shipping/Delivery Address:]]></text>
 			</staticText>
 			<textField pattern="dd/MM/yyyy" isBlankWhenNull="true">
-				<reportElement style="SubTitle" mode="Transparent" x="190" y="109" width="150" height="48" forecolor="#666666" backcolor="#FFFFFF"/>
+				<reportElement style="SubTitle" mode="Transparent" x="164" y="147" width="150" height="48" forecolor="#666666" backcolor="#FFFFFF"/>
 				<textElement textAlignment="Left" verticalAlignment="Top" rotation="None" markup="none">
 					<font fontName="Arial" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 					<paragraph lineSpacing="1_1_2"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{sales_shipping_address}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="172" y="39" width="262" height="26"/>
+				<textElement textAlignment="Center">
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[Kallambalam-Ponganadu Road, TVPM, Kerala, India.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="RelativeToBandHeight" x="172" y="57" width="262" height="55"/>
+				<textElement textAlignment="Center">
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[Br: Ambalam Mukku, Nasar Building 375-376 
+Nellanadu, Venjaramoodu Ring Road, Vamanapuram PO.
+Ph: 7025077775, 9316002222]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="172" y="28" width="262" height="12"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="10"/>
+				</textElement>
+				<text><![CDATA[HO: Thalavila Mukku, VKR Building 326/B]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="357" y="135" width="89" height="13"/>
+				<textElement textAlignment="Right">
+					<font size="9" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Delivery Date :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="357" y="151" width="89" height="13"/>
+				<textElement textAlignment="Right">
+					<font size="9" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Shipped From :]]></text>
+			</staticText>
+			<textField pattern="dd/MM/yyyy" isBlankWhenNull="true">
+				<reportElement style="SubTitle" mode="Transparent" x="483" y="135" width="70" height="15" forecolor="#666666" backcolor="#FFFFFF"/>
+				<textElement textAlignment="Right" verticalAlignment="Top" rotation="None" markup="none">
+					<font fontName="Arial" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="1_1_2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{sales_delivery_date}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy" isBlankWhenNull="true">
+				<reportElement style="SubTitle" mode="Transparent" x="453" y="152" width="100" height="15" forecolor="#666666" backcolor="#FFFFFF"/>
+				<textElement textAlignment="Right" verticalAlignment="Top" rotation="None" markup="none">
+					<font fontName="Arial" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="1_1_2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{sales_shipped_from}]]></textFieldExpression>
 			</textField>
 		</band>
 	</title>

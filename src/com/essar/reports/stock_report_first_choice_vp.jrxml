@@ -42,7 +42,7 @@ FROM
 						<font size="10" isBold="false"/>
 					</textElement>
 					<text><![CDATA[Ambalam Mukku, Vamanapuram PO.
-Head Office:Thalavila Mukku, Thiruvananthapuram
+HO:Thalavila Mukku, Thiruvananthapuram
 Kerala, India. Ph: 7025077775, 9316002222]]></text>
 				</staticText>
 				<image>

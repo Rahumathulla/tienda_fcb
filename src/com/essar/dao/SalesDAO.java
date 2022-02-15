@@ -236,6 +236,8 @@ public class SalesDAO {
                 sales.setVehicleDetails(rs.getString(30));
                 sales.setShippingAddress(rs.getString(31));
                 sales.setIgst(rs.getDouble(32));
+                sales.setDeliveryDate(rs.getDate(33));
+                sales.setShippedFrom(rs.getString(34));
                 //sales.setCreateTS(rs.getDate(13)); 
                 //sales.setUpdateTS(rs.getDate(14));
              String detailSql = "SELECT * from sales_details where sales_id ="+sales.getSalesId();  
@@ -303,6 +305,8 @@ public class SalesDAO {
                 sales.setVehicleDetails(rs.getString(30));
                 sales.setShippingAddress(rs.getString(31));
                 sales.setIgst(rs.getDouble(32));
+                sales.setDeliveryDate(rs.getDate(33));
+                sales.setShippedFrom(rs.getString(34));
                 //sales.setCreateTS(rs.getDate(13)); 
                 //sales.setUpdateTS(rs.getDate(14));
              String detailSql = "SELECT * from sales_details where sales_id ="+sales.getSalesId();  
@@ -342,11 +346,12 @@ public class SalesDAO {
                     + ", discount, payable_amount, status, balance_amount, sales_date"
                     + ", total_gst, sgst, cgst, gst_12, gst_18, gst_30,cess, create_ts, update_ts"
                     + ", customer_name, amount_in_words, round_off, taxable_at_5, taxable_at_12"
-                    + ", taxable_at_18, taxable_at_0, taxable_at_28, gst_28, bill_type, bill_seq_number, vehicle_details, shipping_address, igst)  "
-                    + "values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,NOW(),?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+                    + ", taxable_at_18, taxable_at_0, taxable_at_28, gst_28, bill_type, bill_seq_number, vehicle_details, shipping_address, igst, delivery_date, shipped_from)  "
+                    + "values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,NOW(),?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
             PreparedStatement ps = con.prepareStatement(sql);
             System.out.println("---"+sales.getSalesDate().getTime());
             java.sql.Date salesDate = new java.sql.Date( sales.getSalesDate().getTime() );
+            java.sql.Date deliveryDate = new java.sql.Date( sales.getDeliveryDate().getTime() );
             java.sql.Date createTS = new java.sql.Date( sales.getCreateTS().getTime() );
             java.sql.Date updateTS = new java.sql.Date( sales.getUpdateTS().getTime() );
             //java.sql.Date updateTS = new java.sql.Date( sales.getSalesDate().getTime() );
@@ -381,6 +386,8 @@ public class SalesDAO {
             ps.setString(28, sales.getVehicleDetails());
             ps.setString(29, sales.getShippingAddress());
             ps.setDouble(30, sales.getIgst());
+            ps.setDate(31, deliveryDate);
+            ps.setString(32, sales.getShippedFrom());
             //ps.setDate(17, updateTS);
             ps.executeUpdate();
                         
@@ -463,7 +470,7 @@ public class SalesDAO {
                     + ", total_gst =?, sgst =?, cgst=?, gst_12=?, gst_18=?, gst_30=?"
                     + ", cess =?, sales_date=? , amount_in_words=?, round_off =?, taxable_at_5 =?"
                     + ", taxable_at_12 =?, taxable_at_18 =?, taxable_at_0 =?, taxable_at_28 =?"
-                    + ", gst_28 =?, customer_name = ?, vehicle_details = ?, shipping_address = ?, igst=  ?, update_ts=NOW() "
+                    + ", gst_28 =?, customer_name = ?, vehicle_details = ?, shipping_address = ?, igst=  ?, delivery_date = ?, shipped_from = ?, update_ts=NOW() "
                     + " WHERE bill_number = ?"
                     ;
             PreparedStatement ps = con.prepareStatement(sql);
@@ -473,6 +480,8 @@ public class SalesDAO {
             //java.sql.Date updateTS = new java.sql.Date( sales.getUpdateTS().getTime() );
             //java.sql.Date updateTS = new java.sql.Date( sales.getSalesDate().getTime() );
             java.sql.Date salesDate = new java.sql.Date( sales.getSalesDate().getTime() );
+            java.sql.Date deliveryDate = new java.sql.Date( sales.getDeliveryDate().getTime() );
+            
             ps.setDouble(1, sales.getBillAmount());
             ps.setDouble(2, sales.getDiscount());
             ps.setDouble(3, sales.getPayableAmount());
@@ -499,7 +508,9 @@ public class SalesDAO {
             ps.setString(23, sales.getVehicleDetails());
             ps.setString(24, sales.getShippingAddress());
             ps.setDouble(25, sales.getIgst());
-            ps.setString(26, sales.getBillNumber());
+            ps.setDate(26, deliveryDate);
+            ps.setString(27, sales.getShippedFrom());
+            ps.setString(28, sales.getBillNumber());
 
             System.out.println("----Updating Sales = "+sales.getBillNumber());
             System.out.println("----Updating Query = "+ps.toString());

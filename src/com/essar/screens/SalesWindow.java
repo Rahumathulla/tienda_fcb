@@ -215,6 +215,10 @@ public class SalesWindow extends javax.swing.JFrame implements ActionListener{
         txtShippingAddress = new javax.swing.JTextArea();
         chkSameAsAbove = new javax.swing.JCheckBox();
         chkIgst = new javax.swing.JCheckBox();
+        lblDeliveryDate = new javax.swing.JLabel();
+        dtpDeliveryDate = new com.toedter.calendar.JDateChooser();
+        lblShippedFrom = new javax.swing.JLabel();
+        cmbShippedFrom = new javax.swing.JComboBox();
         jPanel1 = new javax.swing.JPanel();
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
@@ -774,6 +778,43 @@ public class SalesWindow extends javax.swing.JFrame implements ActionListener{
             }
         });
 
+        lblDeliveryDate.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        lblDeliveryDate.setText("Delivery Date");
+
+        dtpDeliveryDate.setDateFormatString("dd/MM/yyyy");
+        dtpDeliveryDate.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                dtpDeliveryDateFocusLost(evt);
+            }
+        });
+        dtpDeliveryDate.addInputMethodListener(new java.awt.event.InputMethodListener() {
+            public void caretPositionChanged(java.awt.event.InputMethodEvent evt) {
+            }
+            public void inputMethodTextChanged(java.awt.event.InputMethodEvent evt) {
+                dtpDeliveryDateInputMethodTextChanged(evt);
+            }
+        });
+        dtpDeliveryDate.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
+            public void propertyChange(java.beans.PropertyChangeEvent evt) {
+                dtpDeliveryDatePropertyChange(evt);
+            }
+        });
+        dtpDeliveryDate.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                dtpDeliveryDateKeyPressed(evt);
+            }
+        });
+
+        lblShippedFrom.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        lblShippedFrom.setText("Shipped From");
+
+        cmbShippedFrom.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "HO: Thalavila", "Br: Ambalam Mukku" }));
+        cmbShippedFrom.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmbShippedFromActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout pnlSupplierLayout = new javax.swing.GroupLayout(pnlSupplier);
         pnlSupplier.setLayout(pnlSupplierLayout);
         pnlSupplierLayout.setHorizontalGroup(
@@ -849,7 +890,7 @@ public class SalesWindow extends javax.swing.JFrame implements ActionListener{
                             .addComponent(txtAmountPayable))
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlSupplierLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 84, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(btnSave)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(pnlSupplierLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -924,7 +965,7 @@ public class SalesWindow extends javax.swing.JFrame implements ActionListener{
                                         .addGroup(pnlSupplierLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addComponent(cmbCustomerType, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addComponent(lblCustomerType, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 38, Short.MAX_VALUE)
                                         .addGroup(pnlSupplierLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                             .addGroup(pnlSupplierLayout.createSequentialGroup()
                                                 .addGap(2, 2, 2)
@@ -944,16 +985,26 @@ public class SalesWindow extends javax.swing.JFrame implements ActionListener{
                                     .addComponent(lblSalesDate, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(lblHSNCode1, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(txtVehicleDetails, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, 119, Short.MAX_VALUE)
                                 .addGroup(pnlSupplierLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(pnlSupplierLayout.createSequentialGroup()
-                                        .addComponent(jScrollPane3)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(8, 8, 8))
-                                    .addGroup(pnlSupplierLayout.createSequentialGroup()
-                                        .addComponent(lblDisplayName, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(0, 0, Short.MAX_VALUE)))))
+                                        .addGroup(pnlSupplierLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addGroup(pnlSupplierLayout.createSequentialGroup()
+                                                .addGroup(pnlSupplierLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                                    .addGroup(pnlSupplierLayout.createSequentialGroup()
+                                                        .addGap(2, 2, 2)
+                                                        .addComponent(cmbShippedFrom, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                    .addComponent(lblShippedFrom, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                .addGap(29, 29, 29))
+                                            .addGroup(pnlSupplierLayout.createSequentialGroup()
+                                                .addComponent(jScrollPane3)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)))
+                                        .addGroup(pnlSupplierLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(dtpDeliveryDate, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(lblDeliveryDate, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addComponent(lblDisplayName, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(8, 8, 8)))
                         .addGap(14, 14, 14)))
                 .addGap(10, 10, 10))
         );
@@ -961,60 +1012,67 @@ public class SalesWindow extends javax.swing.JFrame implements ActionListener{
             pnlSupplierLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlSupplierLayout.createSequentialGroup()
                 .addGroup(pnlSupplierLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(pnlSupplierLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(txtBillNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel2))
                     .addGroup(pnlSupplierLayout.createSequentialGroup()
                         .addContainerGap()
+                        .addGroup(pnlSupplierLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(lblCustomerType)
+                            .addComponent(lblCustomerName)
+                            .addComponent(lblSalesDate))
+                        .addGap(9, 9, 9)
+                        .addGroup(pnlSupplierLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(dtpSalesDate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(pnlSupplierLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(cmbCustomerType, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(cmbCustomerName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(18, 18, 18)
+                        .addGroup(pnlSupplierLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(pnlSupplierLayout.createSequentialGroup()
+                                .addComponent(lblHSNCode1)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(txtVehicleDetails, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(pnlSupplierLayout.createSequentialGroup()
+                                .addComponent(chkSameAsAbove)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(chkIgst))
+                            .addGroup(pnlSupplierLayout.createSequentialGroup()
+                                .addComponent(lblDisplayName1)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(pnlSupplierLayout.createSequentialGroup()
                         .addGroup(pnlSupplierLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(pnlSupplierLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(lblCustomerType)
-                                .addComponent(lblCustomerName)
-                                .addComponent(lblSalesDate))
-                            .addComponent(lblDisplayName, javax.swing.GroupLayout.Alignment.TRAILING))
-                        .addGroup(pnlSupplierLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(txtBillNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jLabel2))
                             .addGroup(pnlSupplierLayout.createSequentialGroup()
-                                .addGap(9, 9, 9)
-                                .addGroup(pnlSupplierLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(dtpSalesDate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(pnlSupplierLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                        .addComponent(cmbCustomerType, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(cmbCustomerName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addGap(18, 18, 18)
-                                .addGroup(pnlSupplierLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(pnlSupplierLayout.createSequentialGroup()
-                                        .addComponent(lblHSNCode1)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(txtVehicleDetails, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(pnlSupplierLayout.createSequentialGroup()
-                                        .addComponent(chkSameAsAbove)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(chkIgst))
-                                    .addGroup(pnlSupplierLayout.createSequentialGroup()
-                                        .addComponent(lblDisplayName1)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                            .addGroup(pnlSupplierLayout.createSequentialGroup()
-                                .addGap(10, 10, 10)
+                                .addGap(15, 15, 15)
+                                .addComponent(lblDisplayName)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(pnlSupplierLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))))))
-                .addGroup(pnlSupplierLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(pnlSupplierLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
                         .addGroup(pnlSupplierLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lblHSNCode, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(lblUnitPrice, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(lblUnitPrice2, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(lblUnitPrice3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lblUnitPrice1, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(lblQuantity, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(lblAvailableQty, javax.swing.GroupLayout.Alignment.TRAILING))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
-                    .addGroup(pnlSupplierLayout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addComponent(lblItemName)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                            .addGroup(pnlSupplierLayout.createSequentialGroup()
+                                .addComponent(lblShippedFrom)
+                                .addGap(9, 9, 9)
+                                .addComponent(cmbShippedFrom, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(pnlSupplierLayout.createSequentialGroup()
+                                .addComponent(lblDeliveryDate)
+                                .addGap(9, 9, 9)
+                                .addComponent(dtpDeliveryDate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(27, 27, 27)))
+                .addGroup(pnlSupplierLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlSupplierLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(lblHSNCode)
+                        .addComponent(lblItemName))
+                    .addComponent(lblUnitPrice, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(lblUnitPrice2, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(lblUnitPrice3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblUnitPrice1, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(lblQuantity, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(lblAvailableQty, javax.swing.GroupLayout.Alignment.TRAILING))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(pnlSupplierLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(txtItemName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtHSNCode, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1122,12 +1180,12 @@ public class SalesWindow extends javax.swing.JFrame implements ActionListener{
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(15, 15, 15)
-                        .addComponent(pnlSupplier, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
                         .addGap(441, 441, 441)
-                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(15, 15, 15)
+                        .addComponent(pnlSupplier, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(26, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1136,7 +1194,7 @@ public class SalesWindow extends javax.swing.JFrame implements ActionListener{
                 .addComponent(pnlSupplier, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(5, 5, 5)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(18, Short.MAX_VALUE))
         );
 
         pack();
@@ -1310,6 +1368,8 @@ public class SalesWindow extends javax.swing.JFrame implements ActionListener{
                 enableFormElements(true);
                 //if(null==dtpSalesDate.getDate()){
                     dtpSalesDate.setDate(new Date());
+                    dtpDeliveryDate.setDate(new Date());
+                    cmbShippedFrom.setSelectedIndex(0);
                 //}
                 SuggestionExampleMain.populateItemNames(this, txtItemName);
                 //txtItemName.requestFocus();
@@ -1568,6 +1628,26 @@ public class SalesWindow extends javax.swing.JFrame implements ActionListener{
 
     }//GEN-LAST:event_lblCustomerTypeMouseClicked
 
+    private void dtpDeliveryDateFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_dtpDeliveryDateFocusLost
+        // TODO add your handling code here:
+    }//GEN-LAST:event_dtpDeliveryDateFocusLost
+
+    private void dtpDeliveryDateInputMethodTextChanged(java.awt.event.InputMethodEvent evt) {//GEN-FIRST:event_dtpDeliveryDateInputMethodTextChanged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_dtpDeliveryDateInputMethodTextChanged
+
+    private void dtpDeliveryDatePropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_dtpDeliveryDatePropertyChange
+        // TODO add your handling code here:
+    }//GEN-LAST:event_dtpDeliveryDatePropertyChange
+
+    private void dtpDeliveryDateKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_dtpDeliveryDateKeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_dtpDeliveryDateKeyPressed
+
+    private void cmbShippedFromActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbShippedFromActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cmbShippedFromActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -1713,6 +1793,8 @@ public class SalesWindow extends javax.swing.JFrame implements ActionListener{
         txtGstPercentage.setEnabled(flag);
         txtGstAmount.setEnabled(flag);
         dtpSalesDate.setEnabled(flag);
+        //dtpDeliveryDate.setEnabled(flag);
+        //cmbShippedFrom.setEnabled(flag);
         //txtVehicleDetails.setEnabled(flag);
         //txtShippingAddress.setEnabled(flag);
     }
@@ -1826,6 +1908,8 @@ public class SalesWindow extends javax.swing.JFrame implements ActionListener{
         sales.setBillSeqNumber(billSeqNumber);
         sales.setVehicleDetails(txtVehicleDetails.getText());
         sales.setShippingAddress(txtShippingAddress.getText());
+        sales.setShippedFrom(cmbShippedFrom.getSelectedItem().toString());
+        sales.setDeliveryDate(dtpDeliveryDate.getDate());
         System.out.println("--Amount in Words :: "+sales.getAmountInWords());
         if(radCash.isSelected())
             sales.setStatus("Paid");
@@ -1895,6 +1979,8 @@ public class SalesWindow extends javax.swing.JFrame implements ActionListener{
         sales.setVehicleDetails(txtVehicleDetails.getText());
         sales.setShippingAddress(txtShippingAddress.getText());
         sales.setSalesDate(dtpSalesDate.getDate());
+        sales.setShippedFrom(cmbShippedFrom.getSelectedItem().toString());
+        sales.setDeliveryDate(dtpDeliveryDate.getDate());
         
         //!@-- Amount in Words change 13/03/2020
         String sPayableAmount = Math.round(sales.getBillAmount())+"";
@@ -2069,11 +2155,17 @@ public class SalesWindow extends javax.swing.JFrame implements ActionListener{
         txtDisplayName.setVisible(true);
         txtShippingAddress.setVisible(true);
         txtVehicleDetails.setVisible(true);
+        
         chkSameAsAbove.setEnabled(true);
         txtDisplayName.setText(sales.getCustomerName());
         txtBillNumber.setText(sales.getBillNumber()+"");
         txtVehicleDetails.setText(sales.getVehicleDetails());
         txtShippingAddress.setText(sales.getShippingAddress());
+        dtpDeliveryDate.setDate(sales.getDeliveryDate());
+        for(int i=0; i<cmbShippedFrom.getItemCount(); i++){
+            if(sales.getShippedFrom().equalsIgnoreCase(cmbShippedFrom.getItemAt(i).toString()))
+                cmbShippedFrom.setSelectedIndex(i);
+        }
         matchShippingAndBillingAddresses();
         txtTotalAmount.setText(sales.getBillAmount()+"");
         txtDiscountAmount.setText(sales.getDiscount()+"");
@@ -2370,7 +2462,9 @@ public class SalesWindow extends javax.swing.JFrame implements ActionListener{
     private javax.swing.JCheckBox chkSameAsAbove;
     private javax.swing.JComboBox cmbCustomerName;
     private javax.swing.JComboBox cmbCustomerType;
+    private javax.swing.JComboBox cmbShippedFrom;
     private javax.swing.JButton cmdReset;
+    private com.toedter.calendar.JDateChooser dtpDeliveryDate;
     private com.toedter.calendar.JDateChooser dtpSalesDate;
     private javax.swing.ButtonGroup grpSalesType;
     private javax.swing.JCheckBoxMenuItem jCheckBoxMenuItem1;
@@ -2391,6 +2485,7 @@ public class SalesWindow extends javax.swing.JFrame implements ActionListener{
     private javax.swing.JLabel lblCustomerName;
     private javax.swing.JLabel lblCustomerPrice;
     private javax.swing.JLabel lblCustomerType;
+    private javax.swing.JLabel lblDeliveryDate;
     private javax.swing.JLabel lblDisplayName;
     private javax.swing.JLabel lblDisplayName1;
     private javax.swing.JLabel lblGst12;
@@ -2411,6 +2506,7 @@ public class SalesWindow extends javax.swing.JFrame implements ActionListener{
     private javax.swing.JLabel lblSGst2;
     private javax.swing.JLabel lblSGst3;
     private javax.swing.JLabel lblSalesDate;
+    private javax.swing.JLabel lblShippedFrom;
     private javax.swing.JLabel lblTotalGst;
     private javax.swing.JLabel lblUnitPrice;
     private javax.swing.JLabel lblUnitPrice1;

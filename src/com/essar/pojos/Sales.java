@@ -45,6 +45,8 @@ public class Sales {
     String vehicleDetails;
     String shippingAddress;                  
     double igst;
+    Date deliveryDate;
+    String shippedFrom;
     List<SalesDetails> salesDetails;
 
     public long getSalesId() {
@@ -309,7 +311,23 @@ public class Sales {
     public void setIgst(double igst) {
         this.igst = igst;
     }
-      
+
+    public Date getDeliveryDate() {
+        return deliveryDate;
+    }
+
+    public void setDeliveryDate(Date deliveryDate) {
+        this.deliveryDate = deliveryDate;
+    }
+
+    public String getShippedFrom() {
+        return shippedFrom;
+    }
+
+    public void setShippedFrom(String shippedFrom) {
+        this.shippedFrom = shippedFrom;
+    }
+     
     
        
 }

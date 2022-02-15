@@ -121,23 +121,13 @@
 		<band splitType="Stretch"/>
 	</background>
 	<title>
-		<band height="79" splitType="Stretch">
+		<band height="109" splitType="Stretch">
 			<staticText>
 				<reportElement x="172" y="2" width="219" height="23"/>
 				<textElement textAlignment="Center">
 					<font size="16" isBold="true"/>
 				</textElement>
 				<text><![CDATA[FIRST CHOICE BUILDMART]]></text>
-			</staticText>
-			<staticText>
-				<reportElement x="155" y="23" width="247" height="15"/>
-				<textElement textAlignment="Center"/>
-				<text><![CDATA[Thalavila Mukku (Kallambalam-Ponganadu Road)]]></text>
-			</staticText>
-			<staticText>
-				<reportElement x="155" y="38" width="247" height="14"/>
-				<textElement textAlignment="Center"/>
-				<text><![CDATA[TVPM, Kerala, India. Ph: 7025077775, 9316002222]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="414" y="5" width="140" height="21"/>
@@ -168,11 +158,34 @@
 				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="207" y="56" width="130" height="23"/>
+				<reportElement x="207" y="86" width="130" height="23"/>
 				<textElement textAlignment="Center" verticalAlignment="Bottom">
 					<font size="12" isBold="true" isUnderline="true"/>
 				</textElement>
 				<text><![CDATA[SALES SUMMARY]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="152" y="24" width="262" height="12"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="10"/>
+				</textElement>
+				<text><![CDATA[HO: Thalavila Mukku, VKR Building 326/B]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="RelativeToBandHeight" x="152" y="53" width="262" height="55"/>
+				<textElement textAlignment="Center">
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[Br: Ambalam Mukku, Nasar Building 375-376 
+Nellanadu, Venjaramoodu Ring Road, Vamanapuram PO.
+Ph: 7025077775, 9316002222]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="152" y="35" width="262" height="26"/>
+				<textElement textAlignment="Center">
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[Kallambalam-Ponganadu Road, TVPM, Kerala, India.]]></text>
 			</staticText>
 		</band>
 	</title>
