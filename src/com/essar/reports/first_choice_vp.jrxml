@@ -2,7 +2,7 @@
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Customer Bill" language="groovy" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
 	<property name="ireport.zoom" value="1.3310000000000006"/>
 	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="0"/>
+	<property name="ireport.y" value="431"/>
 	<import value="java.util.Date"/>
 	<style name="Title" fontName="Arial" fontSize="26" isBold="true" pdfFontName="Helvetica-Bold"/>
 	<style name="SubTitle" forecolor="#666666" fontName="Arial" fontSize="18"/>
@@ -425,14 +425,14 @@ WHERE
 					<textElement>
 						<font fontName="Arial Narrow" size="8" isBold="true" isUnderline="false"/>
 					</textElement>
-					<text><![CDATA[Our Bank Details : South Indian Bank, Venjaramoodu.]]></text>
+					<text><![CDATA[Our Bank Details : Central Bank of India, Venjaramoodu.]]></text>
 				</staticText>
 				<staticText>
-					<reportElement style="Column header" x="0" y="12" width="252" height="17" forecolor="#000000"/>
+					<reportElement style="Column header" x="0" y="12" width="348" height="17" forecolor="#000000"/>
 					<textElement>
 						<font fontName="Arial Narrow" size="8" isBold="false" isUnderline="false"/>
 					</textElement>
-					<text><![CDATA[Account No: 0667083000000018    IFSC Code : SIBL0000667]]></text>
+					<text><![CDATA[Name: First Choice Build Mart   Account No: 5216723214    IFSC Code : CBIN0280940]]></text>
 				</staticText>
 			</band>
 		</groupFooter>
